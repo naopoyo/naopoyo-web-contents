@@ -1,0 +1,70 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Emoji",
+          "name": "emoji",
+          "type": "string",
+          "single": true,
+          "encodeEmoji": false
+        },
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "Slug",
+          "name": "slug",
+          "type": "slug"
+        },
+        {
+          "title": "Publishing date",
+          "name": "published_at",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true,
+          "dateFormat": "yyyy-MM-DD HH:mm:ss"
+        },
+        {
+          "title": "Modifying date",
+          "name": "modified_at",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isModifiedDate": true,
+          "dateFormat": "yyyy-MM-DD HH:mm:ss"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Preview",
+          "name": "preview",
+          "type": "image",
+          "default": null
+        }
+      ]
+    }
+  ],
+  "frontMatter.framework.id": "other",
+  "frontMatter.content.publicFolder": "",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "naopoyo",
+      "path": "[[workspace]]/docs"
+    }
+  ]
+}

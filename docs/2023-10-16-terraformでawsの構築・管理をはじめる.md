@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 emoji: 📙
 title: TerraformでAWSの構築・管理をはじめる
 slug: start-aws-with-terraform

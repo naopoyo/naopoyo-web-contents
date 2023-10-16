@@ -46,36 +46,33 @@ URL safeなBase64の場合(**利用できない環境もある**):
 const decodedData = Buffer.from(encodedData, 'base64url').toString()
 ```
 
-----------
-
-
 ## btoa / atob
 
 Javascriptだけで行う場合は以下のとおりです。
 
-### エンコード
+### btoaによるエンコード
 
 ```typescript
 var encodedData = window.btoa('Hello, world')
 ```
 
-### デコード
+### atobによるデコード
 
 ```typescript
 var decodedData = window.atob(encodedData)
 ```
 
-### ユニコードの文字列を扱う場合
+### Unicodeの文字列を扱う場合
 
-btoaとatobはASCII文字列しか対応していないので、ユニコードの文字列を扱う場合は以下のようにします。**unescapeとescapeは非推奨**。
+btoaとatobはASCII文字列しか対応していないので、Unicodeの文字列を扱う場合は以下のようにします。**unescapeとescapeは非推奨**。
 
-#### エンコード
+#### btoaによるUnicode文字列のエンコード
 
 ```typescript
 var encodedData = window.btoa(unescape(encodeURIComponent('こんにちは')))
 ```
 
-#### デコード
+#### atobによるUnicode文字列のデコード
 
 ```typescript
 var decodedData = decodeURIComponent(escape(window.atob(encodedData)))

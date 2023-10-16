@@ -133,7 +133,7 @@ terraform.rc
 terraform init
 ```
 
-上記コマンドを実行すると、`.terraform、`と`.terraform.lock.hcl`が作成されます。
+上記コマンドを実行すると、`.terraform`と`.terraform.lock.hcl`が作成されます。
 
 ## terraform plan
 

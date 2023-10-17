@@ -6,10 +6,10 @@ slug: create-an-oidc-provider-for-github-actions-in-aws-using-terraform
 published_at: 2023-10-17 23:02:13
 modified_at: 2023-10-17 23:02:13
 tags:
-    - AWS
-    - Terraform
-    - GitHub
-preview: null
+  - AWS
+  - Terraform
+  - GitHub
+preview: /assets/terraformでawsにgithub-actions用のoidcプロバイダーを作成する.webp
 ---
 
 ## 使用するモジュール

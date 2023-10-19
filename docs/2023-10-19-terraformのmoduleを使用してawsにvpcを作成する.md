@@ -8,12 +8,17 @@ modified_at: 2023-10-19 22:42:33
 tags:
     - AWS
     - Terraform
+    - ECS
 preview: null
 ---
 
-## 使用するモジュール
+## 概要
 
-以下のモジュールを使用してAWSのVPCを作成する。ECSをプライベートなサブネットで実行する場合のために、VPCエンドポイントも作成する。
+Terraformを使用したAWSのVPC構築の説明です。ECSにアプリケーションをデプロイするような環境を想定した内容になっています。以下に記載のモジュールを使用します。
+
+ECSをプライベートなサブネットで実行する場合のために、VPCエンドポイントも作成します。
+
+## 使用するモジュール
 
 - [terraform-aws-modules/vpc/aws | Terraform Registry](https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest)
 - [terraform-aws-modules/vpc/aws | vpc-endpoints Submodule | Terraform Registry](https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest/submodules/vpc-endpoints)
@@ -85,7 +90,7 @@ module "vpc" {
 
 ## VPC Endpoint
 
-S3のGatewayエンドポイント、ecr.apiとecr.dkrのエンドポイントを作成。
+S3のGatewayエンドポイント、ecr.apiとecr.dkrのエンドポイントを作成します。
 
 ```hcl
 module "vpc_endpoints" {

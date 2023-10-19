@@ -82,11 +82,12 @@ module "vpc" {
 
 ### VPC作成の補足
 
-- [VPC の DNS 属性 - Amazon Virtual Private Cloud](https://docs.aws.amazon.com/ja_jp/vpc/latest/userguide/vpc-dns.html#vpc-dns-support)
-  - **enable_dns_hostnames**  
-    VPC がパブリック IP アドレスを持つインスタンスへのパブリック DNS ホスト名の割り当てをサポートするかどうかを決定します。
-  - **enable_dns_support**  
-    VPC が Amazon 提供の DNS サーバーを介した DNS 解決策をサポートするかどうかを決定します。
+参考: [VPC の DNS 属性 - Amazon Virtual Private Cloud](https://docs.aws.amazon.com/ja_jp/vpc/latest/userguide/vpc-dns.html#vpc-dns-support)
+
+- **enable_dns_hostnames**  
+  VPC がパブリック IP アドレスを持つインスタンスへのパブリック DNS ホスト名の割り当てをサポートするかどうかを決定します。
+- **enable_dns_support**  
+  VPC が Amazon 提供の DNS サーバーを介した DNS 解決策をサポートするかどうかを決定します。
 
 ## VPC Endpoint
 

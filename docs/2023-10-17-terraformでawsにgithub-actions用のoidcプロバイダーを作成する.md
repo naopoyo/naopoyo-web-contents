@@ -12,6 +12,10 @@ tags:
 preview: /assets/terraformでawsにgithub-actions用のoidcプロバイダーを作成する.webp
 ---
 
+## 概要
+
+AWSでGitHubのOIDC (OpenID Connect) プロバイダーを使用して認証を行うようにすることで、アクセスキーなどの認証情報をGitHubに保存することなく、GitHubからAWSのリソースにアクセスすることができるようになります。
+
 ## 使用するモジュール
 
 [terraform-aws-modules/iam/aws | Terraform Registry](https://registry.terraform.io/modules/terraform-aws-modules/iam/aws/latest)
@@ -56,7 +60,7 @@ module "iam_github_oidc_role" {
 
 ## RoleのPolicy
 
-**このサンプルは全て許可するポリシーになっているので、適宜修正する。**
+**このサンプルは全て許可するポリシーになっているので、適宜修正します。**
 
 ```hcl
 resource "aws_iam_policy" "github_oidc_role_policy" {

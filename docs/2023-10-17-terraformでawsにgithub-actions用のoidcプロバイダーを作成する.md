@@ -9,7 +9,7 @@ tags:
   - AWS
   - Terraform
   - GitHub
-preview: /assets/terraformでawsにgithub-actions用のoidcプロバイダーを作成する.webp
+preview: /assets/2023-10-17-terraformでawsにgithub-actions用のoidcプロバイダーを作成する.webp
 ---
 
 ## 概要

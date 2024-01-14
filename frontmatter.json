@@ -66,5 +66,6 @@
       "title": "naopoyo",
       "path": "[[workspace]]/docs"
     }
-  ]
+  ],
+  "frontMatter.dashboard.openOnStart": true
 }

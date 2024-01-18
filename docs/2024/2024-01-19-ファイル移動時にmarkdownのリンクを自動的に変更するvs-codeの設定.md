@@ -39,7 +39,7 @@ preview: null
 
 このような `a.md` があった場合、`b.md` のファイル名を `moved.md` に変更した場合に `a.md` は次のように自動的に変更されます。
 
-```markdown:新しい a.md の内容
+```markdown:新しいa.mdの内容
 [b](moved.md)
 ```
 

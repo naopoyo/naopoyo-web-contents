@@ -11,7 +11,7 @@ tags:
 preview: null
 ---
 
-## 設定内容
+## 設定方法
 
 ```json:.vscode/settings.json
 {
@@ -45,6 +45,6 @@ preview: null
 
 `![alt](example.png)` のような画像の場合も有効です。とても便利！
 
-## 関連
+## 関連リンク
 
 ::link-card[https://github.com/microsoft/vscode/pull/163378]

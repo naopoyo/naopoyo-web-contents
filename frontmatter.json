@@ -65,6 +65,14 @@
     {
       "title": "naopoyo",
       "path": "[[workspace]]/docs"
+    },
+    {
+      "path": "[[workspace]]/docs/2024",
+      "title": "2024"
+    },
+    {
+      "title": "2023",
+      "path": "[[workspace]]/docs/2023"
     }
   ],
   "frontMatter.dashboard.openOnStart": true

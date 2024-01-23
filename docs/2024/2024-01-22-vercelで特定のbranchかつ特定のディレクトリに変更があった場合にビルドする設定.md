@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 emoji: 🍮
 title: Vercelで特定のbranchかつ特定のディレクトリに変更があった場合にビルドする設定
 slug: configure-vercel-to-build-when-changes-occur-in-a-specific-branch-and-directory

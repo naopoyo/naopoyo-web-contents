@@ -35,7 +35,9 @@ preview: null
 
 以下の例ように `tailwind.config.ts` の `plugins` に追加することで、入力補完の候補に出てくるようになります。また、eslint-plugin-tailwindcssのWarning tailwindcss/no-custom-classnameも発生しなくなります。
 
-### 例) `'word-break': 'auto-phrase'` を　`className="auto-phrase"` のように使えるようにする
+### 例) auto-phrase
+
+`'word-break': 'auto-phrase'` を　`className="auto-phrase"` のように使えるようにします。
 
 ```typescript:tailwind.config.ts
 import plugin from 'tailwindcss/plugin'
@@ -56,7 +58,9 @@ const config: Config = {
 }
 ```
 
-### 例) `'grid-template-rows': 'subgrid'` を　`className="grid-template-rows-subgrid"` のように使えるようにする
+### 例) subgrid
+
+`'grid-template-rows': 'subgrid'` を　`className="grid-template-rows-subgrid"` のように使えるようにします。
 
 これは `grid-rows-subgrid` が使えるようになったので不要になりました。
 

@@ -4,10 +4,10 @@ emoji: 🦂
 title: Tailwind CSSのカスタムクラス名をVS Codeで補完されるように追加する
 slug: add-custom-class-names-of-tailwind-css-to-be-auto-completed-in-vs-code
 published_at: 2023-10-21 19:03:10
-modified_at: 2023-10-21 19:03:10
+modified_at: 2024-01-26 00:28:08
 tags:
-    - Tailwind
-    - CSS
+  - Tailwind
+  - CSS
 preview: null
 ---
 
@@ -33,7 +33,34 @@ preview: null
 
 ## tailwind.config.tsに追加する
 
-以下のように `tailwind.config.ts` の `plugins` に追加することで、入力補完の候補に出てくるようになります。また、eslint-plugin-tailwindcssのWarning tailwindcss/no-custom-classnameも発生しなくなります。
+以下の例ように `tailwind.config.ts` の `plugins` に追加することで、入力補完の候補に出てくるようになります。また、eslint-plugin-tailwindcssのWarning tailwindcss/no-custom-classnameも発生しなくなります。
+
+### 例) `'word-break': 'auto-phrase'` を　`className="auto-phrase"` のように使えるようにする
+
+```typescript:tailwind.config.ts
+import plugin from 'tailwindcss/plugin'
+
+// ...
+
+const config: Config = {
+  // ...
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        '.auto-phrase': {
+          'word-break': 'auto-phrase',
+        },
+      })
+    }),
+  ],
+}
+```
+
+### 例) `'grid-template-rows': 'subgrid'` を　`className="grid-template-rows-subgrid"` のように使えるようにする
+
+これは `grid-rows-subgrid` が使えるようになったので不要になりました。
+
+[Tailwind CSS v3.4: Dynamic viewport units, :has() support, balanced headlines, subgrid, and more - Tailwind CSS](https://tailwindcss.com/blog/tailwindcss-v3-4)
 
 ```typescript:tailwind.config.ts
 import plugin from 'tailwindcss/plugin'

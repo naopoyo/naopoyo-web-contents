@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 emoji: 🐺
 title: shadcn/uiをNext.jsで使う
 slug: using-shadcn-ui-with-next-js

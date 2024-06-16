@@ -63,10 +63,6 @@
   "frontMatter.content.publicFolder": "",
   "frontMatter.content.pageFolders": [
     {
-      "title": "naopoyo",
-      "path": "[[workspace]]/docs"
-    },
-    {
       "path": "[[workspace]]/docs/2024",
       "title": "2024"
     },

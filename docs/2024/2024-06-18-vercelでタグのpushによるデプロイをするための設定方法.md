@@ -45,9 +45,13 @@ vercel.jsonの `git.deploymentEnabled` を `false` にして自動デプロイ�
 
 VercelのWEBの管理画面でTeamを選択して、「Settings」→「General」→「Team ID」の値を設定します。
 
+![Team ID設定画面](../../assets/2024-06-18-vercelでタグのpushによるデプロイをするための設定方法/vercel-team-id.jpg)
+
 ### `VERCEL_PROJECT_ID`
 
 VercelのWEBの管理画面でProjectを選択して、「Settings」→「General」→「Project ID」の値を設定します。
+
+![Project ID設定画面](../../assets/2024-06-18-vercelでタグのpushによるデプロイをするための設定方法/vercel-project-id.jpg)
 
 ### `VERCEL_TOKEN`
 

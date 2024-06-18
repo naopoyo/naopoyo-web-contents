@@ -22,7 +22,7 @@ Vercelへのデプロイのトリガーを変更するための方法を紹介�
 
 ### vercel.jsonの例
 
-vercel.jsonの `git.deploymentEnabled` を `false` にしてmainブランチへの
+vercel.jsonの `git.deploymentEnabled` を `false` にして自動デプロイを無効化します。
 
 ```json:vercel.json
 {

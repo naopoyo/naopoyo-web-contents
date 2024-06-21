@@ -49,7 +49,7 @@ jobs:
           curl "$deploy_url_server"
 ```
 
-以上で、タグのpushでVercelのデプロイが可能になります。
+以上で、タグのpushでRenderのデプロイが可能になります。
 
 ## 参考
 

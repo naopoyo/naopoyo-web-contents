@@ -6,8 +6,9 @@ slug: about-mail-settings-dkim-dmarc-spf
 published_at: 2024-06-28 02:03:13
 modified_at: 2024-06-28 02:03:13
 tags:
-  - メール
   - Terraform
+  - メール
+  - AWS
 preview: null
 type: default
 ---

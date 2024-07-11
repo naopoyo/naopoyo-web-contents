@@ -20,9 +20,9 @@ preview: null
 
 ## Sheetコンポーネントの横幅を変更する
 
-`pnpx shadcn-ui@latest add sheet` で作成された以下のコードから `sm:max-w-sm` を削除する。
+`pnpx shadcn-ui@latest add sheet` で作成された以下のコードから `sm:max-w-sm` を取り除く。
 
-```typescript:components/ui/sheet.tsx
+```tsx:components/ui/sheet.tsx
 // ...
 variants: {
     side: {
@@ -37,7 +37,7 @@ variants: {
 },
 ```
 
-`SheetContent` に横幅を指定する。
+`<SheetContent>` に横幅を指定する。
 
 ```tsx
 <Sheet>

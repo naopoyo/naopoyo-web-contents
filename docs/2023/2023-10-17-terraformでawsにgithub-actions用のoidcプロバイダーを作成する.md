@@ -4,7 +4,7 @@ emoji: 🏗️
 title: TerraformでAWSにGitHub Actions用のOIDCプロバイダーを作成する
 slug: create-an-oidc-provider-for-github-actions-in-aws-using-terraform
 published_at: 2023-10-17 23:02:13
-modified_at: 2023-10-17 23:02:13
+modified_at: 2024-07-12 02:06:49
 tags:
   - AWS
   - Terraform
@@ -18,7 +18,7 @@ AWSでGitHubのOIDC (OpenID Connect) プロバイダーを使用して認証を�
 
 ## 使用するモジュール
 
-[terraform-aws-modules/iam/aws | Terraform Registry](https://registry.terraform.io/modules/terraform-aws-modules/iam/aws/latest)
+::link-card[https://registry.terraform.io/modules/terraform-aws-modules/iam/aws/latest]
 
 ## locals
 
@@ -39,9 +39,10 @@ module "iam_github_oidc_provider" {
 
 ## Role
 
-`subjects` は任意のGitHubリポジトリを設定します。
+`subjects` には任意のGitHubリポジトリを設定します。
 
 ```hcl
+// [!code word:example-org/example-repo]
 module "iam_github_oidc_role" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-github-oidc-role"
   version = "5.17.0"
@@ -60,7 +61,7 @@ module "iam_github_oidc_role" {
 
 ## RoleのPolicy
 
-**このサンプルは全て許可するポリシーになっているので、適宜修正します。**
+**以下の例では全て許可するポリシーになっていますので、適宜修正するようにしましょう。**
 
 ```hcl
 resource "aws_iam_policy" "github_oidc_role_policy" {

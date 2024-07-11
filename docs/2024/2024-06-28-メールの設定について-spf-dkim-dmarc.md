@@ -4,7 +4,7 @@ emoji: ✉️
 title: メールの設定について（SPF、DKIM、DMARC）
 slug: about-mail-settings-dkim-dmarc-spf
 published_at: 2024-06-28 02:03:13
-modified_at: 2024-06-28 02:03:13
+modified_at: 2024-07-11 21:32:10
 tags:
   - Terraform
   - メール
@@ -28,6 +28,52 @@ DKIMとは、電子メールの送信元ドメインを認証し、メッセー�
 ## DMARCとは
 
 DMARCとは、フィッシング、スパム、なりすましメールなどの不正メールを防止するための技術です。SPFやDKIMと組み合わせて、送信元ドメインの認証を強化します。
+
+## DNSレコードの例
+
+以下はそれぞの技術のDNSレコードの例です。
+
+### SPFレコード
+
+```text
+example.com. IN TXT "v=spf1 ip4:127.0.0.1 -all"
+```
+
+ドメイン名(`example.com`)、IPアドレス(`127.0.0.1`)の部分は任意の値に置き換えます。
+
+| タグ名 | 説明                                     | 例              |
+| ------ | ---------------------------------------- | --------------- |
+| `v`    | バージョン                               | `v=spf1`        |
+| `ip4`  | 許可されたIPアドレス範囲                 | `ip4:127.0.0.1` |
+| `all`  | すべての受信メールが照合されることを指定 | `-all`          |
+
+### DKIMレコード
+
+```text
+SELECTOR._domainkey.example.com. IN TXT "v=DKIM1; k=rsa; p=MIIBIjANBgkq..."
+```
+
+セレクタ名(`SELECTOR`)、ドメイン名(`example.com`)、公開鍵(`MIIBIjANBgkq...`)の部分は任意の値に置き換えます。
+
+| タグ名 | 説明       | 例                  |
+| ------ | ---------- | ------------------- |
+| `v`    | バージョン | `v=DKIM1`           |
+| `k`    | 鍵の種類   | `k=rsa`             |
+| `p`    | 公開鍵     | `p=MIIBIjANBgkq...` |
+
+### DMARCレコード
+
+```text
+_dmarc.example.com. IN TXT "v=DMARC1;p=none;rua=mailto:dmarc@example.com"
+```
+
+ドメイン名(`example.com`)、メールアドレス(`dmarc@example.com`)の部分は任意の値に置き換えます。
+
+| タグ名 | 説明                 | 例                      |
+| ------ | -------------------- | ----------------------- |
+| `v`    | バージョン           | `v=DMARC1`              |
+| `p`    | ポリシー             | `p=none`                |
+| `rua`  | 送信先の集計レポート | `rua=dmarc@example.com` |
 
 ## チェックツール
 
@@ -77,3 +123,19 @@ resource "aws_route53_record" "this" {
 Zennに詳しく解説されている記事もあります。
 
 ::link-card[https://zenn.dev/umeso/articles/270a891178c5a9]
+
+## もっと詳しく知りたい
+
+以下はそれぞれの技術について詳しく解説されているWEBサイトへのリンクです。
+
+### SPF
+
+::link-card[https://support.google.com/a/answer/10683907?hl=ja]
+
+### DKIM
+
+::link-card[https://blastengine.jp/blog_content/confirm-dkim/]
+
+### DMARC
+
+::link-card[https://support.google.com/a/answer/2466563?hl=ja&sjid=16416951720177095561-AP]

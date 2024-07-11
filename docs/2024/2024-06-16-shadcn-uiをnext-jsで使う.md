@@ -20,24 +20,27 @@ preview: null
 
 ## Sheetコンポーネントの横幅を変更する
 
-`pnpx shadcn-ui@latest add sheet` で作成された以下のコードから `sm:max-w-sm` を取り除く。
+`pnpx shadcn-ui@latest add sheet` で作成された以下のコードから `sm:max-w-sm` を取り除きます。
 
 ```tsx:components/ui/sheet.tsx
+// [!code word:sm\:max-w-sm]
 // ...
 variants: {
     side: {
     top: 'inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top',
     bottom:
         'inset-x-0 bottom-0 border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom',
-    left: 'inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm',
+    left: 'inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm', // [!code --]
+    left: 'inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left', // [!code ++]
     right:
-        'inset-y-0 right-0 h-full w-3/4  border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm',
+        'inset-y-0 right-0 h-full w-3/4  border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm', // [!code --]
+        'inset-y-0 right-0 h-full w-3/4  border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right', // [!code ++]
     },
 // ...
 },
 ```
 
-`<SheetContent>` に横幅を指定する。
+`<SheetContent>` に横幅を指定します。
 
 ```tsx
 <Sheet>

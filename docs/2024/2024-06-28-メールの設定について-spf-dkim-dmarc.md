@@ -38,7 +38,6 @@ DMARCとは、フィッシング、スパム、なりすましメールなどの
 ```text
 // [!code word:example.com]
 // [!code word:127.0.0.1]
-
 example.com. IN TXT "v=spf1 ip4:127.0.0.1 -all"
 ```
 
@@ -56,7 +55,6 @@ example.com. IN TXT "v=spf1 ip4:127.0.0.1 -all"
 // [!code word:SELECTOR]
 // [!code word:example.com]
 // [!code word:MIIBIjANBgkq...]
-
 SELECTOR._domainkey.example.com. IN TXT "v=DKIM1; k=rsa; p=MIIBIjANBgkq..."
 ```
 
@@ -72,8 +70,7 @@ SELECTOR._domainkey.example.com. IN TXT "v=DKIM1; k=rsa; p=MIIBIjANBgkq..."
 
 ```text
 // [!code word:dmarc@example.com]
-// [!code word:example.com]x
-
+// [!code word:example.com]
 _dmarc.example.com. IN TXT "v=DMARC1;p=none;rua=mailto:dmarc@example.com"
 ```
 

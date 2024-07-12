@@ -1,5 +1,9 @@
 {
   "packageManager": "pnpm@9.5.0",
+  "scripts": {
+    "prettier:write": "prettier --write --ignore-unknown .",
+    "format": "pnpm prettier:write"
+  },
   "devDependencies": {
     "npm-check-updates": "16.14.20",
     "prettier": "3.3.2"

@@ -36,6 +36,9 @@ DMARCとは、フィッシング、スパム、なりすましメールなどの
 ### SPFレコード
 
 ```text
+// [!code word:example.com]
+// [!code word:127.0.0.1]
+
 example.com. IN TXT "v=spf1 ip4:127.0.0.1 -all"
 ```
 
@@ -50,6 +53,10 @@ example.com. IN TXT "v=spf1 ip4:127.0.0.1 -all"
 ### DKIMレコード
 
 ```text
+// [!code word:SELECTOR]
+// [!code word:example.com]
+// [!code word:MIIBIjANBgkq...]
+
 SELECTOR._domainkey.example.com. IN TXT "v=DKIM1; k=rsa; p=MIIBIjANBgkq..."
 ```
 
@@ -64,6 +71,9 @@ SELECTOR._domainkey.example.com. IN TXT "v=DKIM1; k=rsa; p=MIIBIjANBgkq..."
 ### DMARCレコード
 
 ```text
+// [!code word:dmarc@example.com]
+// [!code word:example.com]x
+
 _dmarc.example.com. IN TXT "v=DMARC1;p=none;rua=mailto:dmarc@example.com"
 ```
 
@@ -130,7 +140,7 @@ Zennに詳しく解説されている記事もあります。
 
 ### SPF
 
-::link-card[https://support.google.com/a/answer/10683907?hl=ja]
+::link-card[https://support.google.com/a/answer/10683907]
 
 ### DKIM
 
@@ -138,4 +148,4 @@ Zennに詳しく解説されている記事もあります。
 
 ### DMARC
 
-::link-card[https://support.google.com/a/answer/2466563?hl=ja&sjid=16416951720177095561-AP]
+::link-card[https://support.google.com/a/answer/2466563]

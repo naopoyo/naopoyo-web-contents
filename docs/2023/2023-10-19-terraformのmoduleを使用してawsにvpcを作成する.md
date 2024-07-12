@@ -6,9 +6,9 @@ slug: use-the-terraform-module-to-create-a-vpc-on-aws
 published_at: 2023-10-19 22:42:33
 modified_at: 2023-10-19 22:42:33
 tags:
-    - AWS
-    - Terraform
-    - ECS
+  - AWS
+  - Terraform
+  - ECS
 preview: null
 ---
 

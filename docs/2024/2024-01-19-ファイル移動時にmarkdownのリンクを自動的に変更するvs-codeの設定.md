@@ -6,8 +6,8 @@ slug: vscode-update-links-on-file-move
 published_at: 2024-01-19 01:18:00
 modified_at: 2024-01-19 01:18:00
 tags:
-    - Markdown
-    - VS Code
+  - Markdown
+  - VS Code
 preview: null
 ---
 

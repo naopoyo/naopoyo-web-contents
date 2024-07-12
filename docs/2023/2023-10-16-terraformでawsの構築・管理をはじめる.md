@@ -6,8 +6,8 @@ slug: start-aws-with-terraform
 published_at: 2023-10-16 01:15:04
 modified_at: 2023-10-16 01:15:04
 tags:
-    - AWS
-    - Terraform
+  - AWS
+  - Terraform
 preview: null
 ---
 
@@ -19,16 +19,14 @@ AWSのコンソールでTerraform実行用のIAMユーザーを作成して、�
 
 ```json
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:*"
-            ],
-            "Resource": "*"
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["s3:*"],
+      "Resource": "*"
+    }
+  ]
 }
 ```
 
@@ -103,8 +101,8 @@ crash.log
 crash.*.log
 
 # Exclude all .tfvars files, which are likely to contain sensitive data, such as
-# password, private keys, and other secrets. These should not be part of version 
-# control as they are data points which are potentially sensitive and subject 
+# password, private keys, and other secrets. These should not be part of version
+# control as they are data points which are potentially sensitive and subject
 # to change depending on the environment.
 *.tfvars
 *.tfvars.json

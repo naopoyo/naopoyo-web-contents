@@ -306,7 +306,7 @@ graph TD;
 ::link-card[https://hackersheet.com/]
 ```
 
-## 棋譜プレーヤーの埋め込み
+### 棋譜プレーヤーの埋め込み
 
 ```kifu:mykifu
 先手：相手 3級

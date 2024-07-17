@@ -85,15 +85,15 @@ console.log(message);
 ### コードブロックにdiffを表示する
 
 ```typescript:hello.ts
-const message: string = "Hello, World!"; // [!code --] // [/!code --]
-const message: string = "Hello, New World!"; // [!code ++] // [/!code --]
+const message: string = "Hello, World!"; // [!code --]
+const message: string = "Hello, New World!"; // [!code ++]
 console.log(message);
 ```
 
 ````markdown
 ```typescript:hello.ts
-const message: string = "Hello, World!"; // [!code --] // [/!code --]
-const message: string = "Hello, New World!"; // [!code ++] // [/!code --]
+const message: string = "Hello, World!"; // [/!code --]
+const message: string = "Hello, New World!"; // [/!code ++]
 console.log(message);
 ```
 ````

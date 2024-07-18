@@ -85,15 +85,15 @@ console.log(message);
 ### コードブロックにdiffを表示する
 
 ```typescript:hello.ts
-const message: string = "Hello, World!"; // [!code --]
-const message: string = "Hello, New World!"; // [!code ++]
+const message: string = "Hello, World!";// [!code --]
+const message: string = "Hello, New World!";// [!code ++]
 console.log(message);
 ```
 
 ````markdown
 ```typescript:hello.ts
-const message: string = "Hello, World!"; // [\!code --]
-const message: string = "Hello, New World!"; // [\!code ++]
+const message: string = "Hello, World!";// [\!code --]
+const message: string = "Hello, New World!";// [\!code ++]
 console.log(message);
 ```
 ````
@@ -101,13 +101,13 @@ console.log(message);
 ### コードブロックの行をハイライト
 
 ```typescript:hello.ts
-const message: string = "Hello, World!"; // [!code highlight]
+const message: string = "Hello, World!";// [!code highlight]
 console.log(message);
 ```
 
 ````markdown
 ```typescript:hello.ts
-const message: string = "Hello, World!"; // [\!code highlight]
+const message: string = "Hello, World!";// [\!code highlight]
 console.log(message);
 ```
 ````

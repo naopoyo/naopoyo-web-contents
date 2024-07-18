@@ -98,6 +98,36 @@ console.log(message);
 ```
 ````
 
+### コードブロックの行をハイライト
+
+```typescript:hello.ts
+const message: string = "Hello, World!"; // [!code highlight]
+console.log(message);
+```
+
+````markdown
+```typescript:hello.ts
+const message: string = "Hello, World!"; // [\!code highlight]
+console.log(message);
+```
+````
+
+### コードブロックの文字をハイライト
+
+```typescript:hello.ts
+// [!code word:Hello]
+const message: string = "Hello, World!";
+console.log(message);
+```
+
+````markdown
+```typescript:hello.ts
+// [\!code word:Hello]
+const message: string = "Hello, World!";
+console.log(message);
+```
+````
+
 ## インラインコード
 
 `some code`

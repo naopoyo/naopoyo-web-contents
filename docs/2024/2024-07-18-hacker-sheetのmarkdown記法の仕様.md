@@ -22,23 +22,23 @@ type: default
 
 ###### h6
 
-```markdown
+```markdown:Markdown
 ## h2
 ```
 
-```markdown
+```markdown:Markdown
 ### h3
 ```
 
-```markdown
+```markdown:Markdown
 #### h4
 ```
 
-```markdown
+```markdown:Markdown
 ##### h5
 ```
 
-```markdown
+```markdown:Markdown
 ###### h6
 ```
 
@@ -50,7 +50,7 @@ type: default
   - Item2-2
 - Item3
 
-```markdown
+```markdown:Markdown
 - Item1
 - Item2
   - Item2-1
@@ -62,7 +62,7 @@ type: default
 2. Item2
 3. Item3
 
-```markdown
+```markdown:Markdown
 1. Item1
 2. Item2
 3. Item3
@@ -75,7 +75,7 @@ const message: string = "Hello, World!";
 console.log(message);
 ```
 
-````markdown
+````markdown:Markdown
 ```typescript:hello.ts
 const message: string = "Hello, World!";
 console.log(message);
@@ -90,7 +90,7 @@ const message: string = "Hello, New World!"; // [!code ++]
 console.log(message);
 ```
 
-````markdown
+````markdown:Markdown
 ```typescript:hello.ts
 const message: string = "Hello, World!"; // [\!code --]
 const message: string = "Hello, New World!"; // [\!code ++]
@@ -105,7 +105,7 @@ const message: string = "Hello, World!"; // [!code highlight]
 console.log(message);
 ```
 
-````markdown
+````markdown:Markdown
 ```typescript:hello.ts
 const message: string = "Hello, World!"; // [\!code highlight]
 console.log(message);
@@ -120,7 +120,7 @@ const message: string = "Hello, World!";
 console.log(message);
 ```
 
-````markdown
+````markdown:Markdown
 ```typescript:hello.ts
 // [\!code word:Hello]
 const message: string = "Hello, World!";
@@ -132,7 +132,7 @@ console.log(message);
 
 `some code`
 
-```markdown
+```markdown:Markdown
 `some code`
 ```
 
@@ -142,7 +142,7 @@ console.log(message);
 
 テキストが _イタリック_ になります。
 
-```markdown
+```markdown:Markdown
 テキストが _イタリック_ になります。
 ```
 
@@ -150,7 +150,7 @@ console.log(message);
 
 テキストが **太字** になります。
 
-```markdown
+```markdown:Markdown
 テキストが **太字** になります。
 ```
 
@@ -158,7 +158,7 @@ console.log(message);
 
 テキストが **_イタリック太字_** になります。
 
-```markdown
+```markdown:Markdown
 テキストが **_イタリック太字_** になります。
 ```
 
@@ -166,7 +166,7 @@ console.log(message);
 
 テキストが ~~打ち消されます~~。
 
-```markdown
+```markdown:Markdown
 テキストが ~~打ち消されます~~。
 ```
 
@@ -177,7 +177,7 @@ console.log(message);
 | Data   | Data   | Data   |
 | Data   | Data   | Data   |
 
-```markdown
+```markdown:Markdown
 | Header | Header | Header |
 | ------ | ------ | ------ |
 | Data   | Data   | Data   |
@@ -188,7 +188,7 @@ console.log(message);
 
 [Title](https://example.com)
 
-```markdown
+```markdown:Markdown
 [Title](https://example.com)
 ```
 
@@ -200,7 +200,7 @@ console.log(message);
 >
 > この文章は引用です
 
-```markdown
+```markdown:Markdown
 > この文章は引用です
 >
 > この文章は引用です
@@ -212,7 +212,7 @@ console.log(message);
 
 ![Hacker Sheetトップページ](../assets/hackersheet-top-page.jpg)
 
-```markdown
+```markdown:Markdown
 ![Hacker Sheetトップページ](../assets/hackersheet-top-page.jpg)
 ```
 
@@ -220,7 +220,7 @@ console.log(message);
 
 数式を $a\ne0$ インラインで表示します。
 
-```markdown
+```markdown:Markdown
 数式を $a\ne0$ インラインで表示します。
 ```
 
@@ -232,7 +232,7 @@ f(x) = \int_{-\infty}^\infty
     \,d\xi
 $$
 
-```markdown
+```markdown:Markdown
 $$
 f(x) = \int_{-\infty}^\infty
     \hat f(\xi)\,e^{2 \pi i \xi x}
@@ -251,14 +251,14 @@ $$
     脚注内に改行を追加するには、新しい行の前に 2 つのスペースを付けます。  
     これは 2 行目です。
 
-```markdown
+```markdown:Markdown
 以下に簡単な脚注を示します[^1]。
 
 脚注には複数行を含めることもできます[^2]。
 
 [^1]: 参考資料。
 [^2]:
-    脚注内に改行を追加するには、新しい行の前に 2 つのスペースを付けます。  
+    脚注内に改行を追加するには、新しい行の前に 2 つのスペースを付けます。
     これは 2 行目です。
 ```
 
@@ -266,7 +266,7 @@ $$
 
 ---
 
-```markdown
+```markdown:Markdown
 ---
 ```
 
@@ -280,7 +280,7 @@ puts 'Hello, World'
 
 </details>
 
-````markdown
+````markdown:Markdown
 <details><summary>サンプルコード</summary>
 
 ```rb
@@ -300,7 +300,7 @@ graph TD;
     C-->D;
 ```
 
-````markdown
+````markdown:Markdown
 ```mermaid
 graph TD;
     A-->B;
@@ -316,7 +316,7 @@ graph TD;
 
 ::x-post[https://x.com/naopoyo_tw/status/1745099727606276538]
 
-```markdown
+```markdown:Markdown
 ::x-post[https://x.com/naopoyo_tw/status/1745099727606276538]
 ```
 
@@ -324,7 +324,7 @@ graph TD;
 
 ::youtube[https://www.youtube.com/watch?v=jNQXAC9IVRw]
 
-```markdown
+```markdown:Markdown
 ::youtube[https://www.youtube.com/watch?v=jNQXAC9IVRw]
 ```
 
@@ -332,7 +332,7 @@ graph TD;
 
 ::link-card[https://hackersheet.com/]
 
-```markdown
+```markdown:Markdown
 ::link-card[https://hackersheet.com/]
 ```
 
@@ -423,7 +423,7 @@ graph TD;
 
 コードブロックの言語の部分を `kifu:<kifu ID>` にすることでプレーヤーに変換します。`<kifu ID>` は手数の移動に使用します。
 
-````markdown
+````markdown:Markdown
 ```kifu:mykifu
 先手：相手 3級
 後手：自分 26級
@@ -514,6 +514,6 @@ graph TD;
 
 :kifu-to[mykifu:0]{label="開始局面"} に移動、:kifu-to[mykifu:3] に移動。
 
-```markdown
+```markdown:Markdown
 :kifu-to[mykifu:0]{label="開始局面"} に移動、:kifu-to[mykifu:3] に移動。
 ```

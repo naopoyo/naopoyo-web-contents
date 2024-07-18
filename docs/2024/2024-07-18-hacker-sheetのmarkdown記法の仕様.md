@@ -92,8 +92,8 @@ console.log(message);
 
 ````markdown
 ```typescript:hello.ts
-const message: string = "Hello, World!"; // [/!code --]
-const message: string = "Hello, New World!"; // [/!code ++]
+const message: string = "Hello, World!"; // [\!code --]
+const message: string = "Hello, New World!"; // [\!code ++]
 console.log(message);
 ```
 ````

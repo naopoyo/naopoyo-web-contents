@@ -4,7 +4,7 @@ emoji: ✏️
 title: Hacker SheetのMarkdown記法の仕様
 slug: hackersheet-markdown-spec
 published_at: 2024-07-18 02:04:21
-modified_at: 2024-07-18 02:04:21
+modified_at: 2024-07-19 21:26:25
 tags:
   - Hacker Sheet
   - Markdown
@@ -23,22 +23,10 @@ type: default
 ###### h6
 
 ```markdown:Markdown
-## h2
-```
-
-```markdown:Markdown
+## 見出し
 ### h3
-```
-
-```markdown:Markdown
 #### h4
-```
-
-```markdown:Markdown
 ##### h5
-```
-
-```markdown:Markdown
 ###### h6
 ```
 
@@ -130,21 +118,15 @@ console.log(message);
 
 ## インラインコード
 
-`some code`
+インラインで `some code` を記述できます。
 
 ```markdown:Markdown
-`some code`
+インラインで `some code` を記述できます。
 ```
 
 ## テキスト装飾
 
-### イタリック
-
-テキストが _イタリック_ になります。
-
-```markdown:Markdown
-テキストが _イタリック_ になります。
-```
+太字、イタリック、取り消し線でテキストを装飾できます。
 
 ### 太字
 
@@ -152,6 +134,14 @@ console.log(message);
 
 ```markdown:Markdown
 テキストが **太字** になります。
+```
+
+### イタリック
+
+テキストが _イタリック_ になります。
+
+```markdown:Markdown
+テキストが _イタリック_ になります。
 ```
 
 ### イタリック＋太字
@@ -162,12 +152,12 @@ console.log(message);
 テキストが **_イタリック太字_** になります。
 ```
 
-### 打ち消し
+### 取り消し線
 
-テキストが ~~打ち消されます~~。
+テキストに ~~取り消し線~~ を表示します。
 
 ```markdown:Markdown
-テキストが ~~打ち消されます~~。
+テキストに ~~取り消し線~~ を表示します。
 ```
 
 ## 表
@@ -210,10 +200,10 @@ console.log(message);
 
 ## 画像
 
-![Hacker Sheetトップページ](../assets/hackersheet-top-page.jpg)
+![Hacker Sheetトップページ](/assets/2024-07-18-hacker-sheetのmarkdown記法の仕様/hackersheet-top-page.jpg)
 
 ```markdown:Markdown
-![Hacker Sheetトップページ](../assets/hackersheet-top-page.jpg)
+![Hacker Sheetトップページ](/assets/2024-07-18-hacker-sheetのmarkdown記法の仕様/hackersheet-top-page.jpg)
 ```
 
 ## 数式（インライン）
@@ -310,7 +300,63 @@ graph TD;
 ```
 ````
 
+## アラート
+
+アラートは、重要な情報を強調する際に使用できるブロッククォート構文に基づいたMarkdown拡張です。
+
+### NOTE
+
+> [!NOTE]
+> 内容をざっと読み飛ばしても、ユーザーが知っておくべき有益な情報。
+
+```markdown:Markdown
+> [!NOTE]
+> 内容をざっと読み飛ばしても、ユーザーが知っておくべき有益な情報。
+```
+
+### TIP
+
+> [!TIP]
+> 物事をより良く、またはより簡単に行うための役立つアドバイス。
+
+```markdown:Markdown
+> [!TIP]
+> 物事をより良く、またはより簡単に行うための役立つアドバイス。
+```
+
+### IMPORTANT
+
+> [!IMPORTANT]
+> ユーザーが目標を達成するために知っておくべき重要な情報。
+
+```markdown:Markdown
+> [!IMPORTANT]
+> ユーザーが目標を達成するために知っておくべき重要な情報。
+```
+
+### WARNING
+
+> [!WARNING]
+> 問題を回避するために、ユーザーがすぐに注意を払うべき緊急の情報。
+
+```markdown:Markdown
+> [!WARNING]
+> 問題を回避するために、ユーザーがすぐに注意を払うべき緊急の情報。
+```
+
+### CAUTION
+
+> [!CAUTION]
+> 特定の行動に伴うリスクや悪影響についての助言。
+
+```markdown:Markdown
+> [!CAUTION]
+> 特定の行動に伴うリスクや悪影響についての助言。
+```
+
 ## Hacker Sheet独自記法
+
+Hacker Sheetでは以下のMarkdown拡張が利用可能です。
 
 ### Xの投稿を埋め込む
 

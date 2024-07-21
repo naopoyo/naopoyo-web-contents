@@ -56,6 +56,16 @@ type: default
 3. Item3
 ```
 
+- [ ] Task1
+- [x] Task2
+- [ ] Task3
+
+```markdown:Markdown
+- [ ] Task1
+- [x] Task2
+- [ ] Task3
+```
+
 ## コードブロック
 
 ```typescript:hello.ts

@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 emoji: 🛸
 title: PreztoでZshをカスタマイズする
 slug: customizing-zsh-with-prezto

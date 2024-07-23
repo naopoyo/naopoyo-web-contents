@@ -10,70 +10,102 @@ tags:
 preview: null
 ---
 
-TypeScript/JavascriptでBase64のエンコードとデコードの方法です。
+## この記事について
 
-## Buffer
+TypeScript/JavascriptでBase64のエンコードとデコードの方法を紹介しています。Node.jsの場合はBufferを、それ以外の場合はTextEncoderとTextDecoderを使うことをおすすめします。
 
-Node.jsの場合は、Bufferを使えます。
+## Bufferを使用する場合
 
-### import
+Node.jsの場合はBufferを使用できます。以下のようにimportします。
 
 ```typescript
 import { Buffer } from 'buffer'
 ```
 
-### エンコード
+### Bufferを使ったエンコード
 
 ```typescript
 const encodedData = Buffer.from('Hello, world').toString('base64')
 ```
 
-URL safeなBase64の場合(**利用できない環境もある**):
+### Bufferを使ったエンコード （URL safe）
+
+URL safeなBase64エンコードの場合は以下のように `base64url` を指定します。クライアント側で動かす場合など、利用できない環境があります。
 
 ```typescript
 const encodedData = Buffer.from('Hello, world').toString('base64url')
 ```
 
-### デコード
+### Bufferを使ったデコード
 
 ```typescript
 const decodedData = Buffer.from(encodedData, 'base64').toString()
 ```
 
-URL safeなBase64の場合(**利用できない環境もある**):
+### Bufferを使ったデコード （URL safe）
+
+URL safeなBase64デコードの場合は以下のように `base64url` を指定します。クライアント側で動かす場合など、利用できない環境があります。
 
 ```typescript
 const decodedData = Buffer.from(encodedData, 'base64url').toString()
 ```
 
-## btoa / atob
+## Bufferを使用しない場合
 
-Javascriptだけで行う場合は以下のとおりです。
+Bufferを使用しない場合はbtoa、atobを使用します。
 
 ### btoaによるエンコード
 
 ```typescript
-var encodedData = window.btoa('Hello, world')
+const encodedData = btoa('Hello, world')
 ```
 
 ### atobによるデコード
 
 ```typescript
-var decodedData = window.atob(encodedData)
+const decodedData = atob(encodedData)
 ```
 
-### Unicodeの文字列を扱う場合
+### Unicode文字列を扱う場合 その1 (TextEncoderとTextDecoderを使う)
 
-btoaとatobはASCII文字列しか対応していないので、Unicodeの文字列を扱う場合は以下のようにします。**unescapeとescapeは非推奨**。
+btoaとatobはASCII文字列しか対応していないので、Unicode文字列を扱う場合は以下のようにします。
 
-#### btoaによるUnicode文字列のエンコード
+#### TextEncoderを使うエンコード
 
 ```typescript
-var encodedData = window.btoa(unescape(encodeURIComponent('こんにちは')))
+const str = 'こんにちは'
+const encodedData = btoa(String.fromCharCode(...Array.from(new TextEncoder().encode(str))))
 ```
 
-#### atobによるUnicode文字列のデコード
+`encodedData` は `44GT44KT44Gr44Gh44Gv` になります。
+
+#### TextDecoderを使うデコード
 
 ```typescript
-var decodedData = decodeURIComponent(escape(window.atob(encodedData)))
+const encodedData = '44GT44KT44Gr44Gh44Gv'
+const decodedData = new TextDecoder().decode(
+  Uint8Array.from(atob(encodedData), (c) => c.charCodeAt(0))
+)
 ```
+
+`decodedData` は `こんにちは` になります。
+
+### Unicode文字列を扱う場合 その2 (unescapeとescapeを使う)
+
+btoaとatobはASCII文字列しか対応していないので、Unicode文字列を扱う場合は以下のようにします。**unescapeとescapeは非推奨**なので前述のTextEncoderとTextDecoderを使う方法をおすすめします。
+
+#### unescapeを使うUnicode文字列のエンコード
+
+```typescript
+const encodedData = btoa(unescape(encodeURIComponent('こんにちは')))
+```
+
+`encodedData` は `44GT44KT44Gr44Gh44Gv` になります。
+
+#### escapeを使うUnicode文字列のデコード
+
+```typescript
+const decodedData = decodeURIComponent(escape(atob(encodedData)))
+```
+
+`decodedData` は `こんにちは` になります。

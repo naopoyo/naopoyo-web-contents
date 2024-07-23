@@ -4,7 +4,7 @@ emoji: 🔄
 title: TypeScriptのBase64のエンコードとデコード
 slug: encode-and-decode-base64-in-typescript
 published_at: 2023-10-16 01:54:32
-modified_at: 2023-10-16 01:54:32
+modified_at: 2024-07-23 20:51:42
 tags:
   - TypeScript
 preview: null

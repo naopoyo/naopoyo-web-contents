@@ -85,11 +85,11 @@ git submodule update --init --recursive
 
 `.zpreztorc` を開いて以下のように修正する。
 
-```sh:.zpreztorc
+```text:.zpreztorc
 # Set the Prezto modules to load (browse modules).
 # The order matters.
 zstyle ':prezto:load' pmodule \
-  'git' \ # [!code ++]
+  'git' \ // [!code ++]
   'environment' \
   # ... 中略 ... #
   'completion' \

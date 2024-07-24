@@ -92,7 +92,15 @@ const decodedData = new TextDecoder().decode(
 
 ### Unicode文字列を扱う場合 その2 (unescapeとescapeを使う)
 
-btoaとatobはASCII文字列しか対応していないので、Unicode文字列を扱う場合は以下のようにします。**unescapeとescapeは非推奨**なので前述のTextEncoderとTextDecoderを使う方法をおすすめします。
+btoaとatobはASCII文字列しか対応していないので、Unicode文字列を扱う場合は以下のようにします。
+
+> [!WARNING]
+> unescapeとescapeの使用は好ましくないとされているので、前述のTextEncoderとTextDecoderを使う方法をおすすめします。
+>
+> 参考資料:
+>
+> - [escape()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/escape)
+> - [unescape()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/unescape)
 
 #### unescapeを使うUnicode文字列のエンコード
 

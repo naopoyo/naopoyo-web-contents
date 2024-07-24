@@ -13,11 +13,11 @@ type: default
 
 ## この記事について
 
-::link-card[https://github.com/sorin-ionescu/prezto]
-
 Zshの設定フレームワークであるPreztoについてまとめています。
 
-## インストール
+::link-card[https://github.com/sorin-ionescu/prezto]
+
+## Preztoのインストール
 
 まず、Gitリポジトリをクローンします。
 
@@ -27,7 +27,24 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$H
 
 次にzshの構成ファイルの作成を行います。
 
-```sh:Terminal
+> [!CAUTION]
+> 後述の「構成ファイル作成コマンド」を実行する前に、ホームディレクトリに存在する以下のファイルのバックアップを作成しておくことをおすすめします。
+>
+> - .zlogin
+> - .zlogout
+> - .zprofile
+> - .zshenv
+> - .zshrc
+>
+> 下記の「バックアップ用コマンドの例」ではホームディレクトリに `.zsh-backup`というディレクトリを作成して上記のファイルを全てコピーします。
+>
+> ```sh:バックアップ用コマンドの例
+> mkdir -p ~/.zsh-backup && cp ~/.zlogin ~/.zlogout ~/.zprofile ~/.zshenv ~/.zshrc ~/.zsh-backup/
+> ```
+
+バックアップが完了したら「構成ファイル作成コマンド」を実行します。
+
+```sh:構成ファイル作成コマンド
 setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
@@ -43,7 +60,9 @@ done
 - .zshenv -> ~/.zprezto/runcoms/zshenv
 - .zshrc -> ~/.zprezto/runcoms/zshrc
 
-## アップデート
+## Preztoのアップデート
+
+zshの構成ファイルを編集していない場合は公式のREADME.mdに記載されている次のコマンドで更新できます。
 
 ```sh:Terminal
 cd $ZPREZTODIR
@@ -52,7 +71,7 @@ git submodule sync --recursive
 git submodule update --init --recursive
 ```
 
-zshの構成ファイルを編集していない場合は公式のREADME.mdに記載されている上記のコマンドで更新できます。しかし、`.zshrc`をカスタマイズしている場合などは以下のようなエラーが出ます。
+しかし、`.zshrc`をカスタマイズしている場合などは `git pull` の時点で以下のようなエラーが出ます。
 
 ```text
 error: Your local changes to the following files would be overwritten by merge:
@@ -94,4 +113,44 @@ zstyle ':prezto:load' pmodule \
   # ... 中略 ... #
   'completion' \
   'prompt'
+```
+
+## Preztoのアンインストール
+
+後述の「アンインストールコマンド」でアンインストールできます。
+
+> [!CAUTION]
+> 「アンインストールコマンド」を実行すると以下のzsh構成ファイルも削除されてしまいます。カスタマイズしている場合はバックアップを取っておくことをおすすめします。
+>
+> - .zshrc
+> - .zlogin
+> - .zlogout
+> - .zprofile
+> - .zshenv
+>
+> 本記事の手順でPreztoをインストールした場合、ホームディレクトリにあるこれらのファイルは `~/.zprezto/runcoms` に存在するファイルへのシンボリックリンクになっています。アンインストールする場合 `~/.zprezto` を削除するのでカスタマイズしている場合は、事前にバックアップしておくと良いです。
+>
+> カスタマイズしていない場合はPreztoのGitHubリポジトリなどから復元可能です。
+
+「アンインストール前のバックアップコマンド」を実行すると、ホームディレクトリに `.zsh-uninstall-backup` を作成してzsh構成ファイルをコピーします。
+
+```sh:アンインストール前のバックアップコマンド
+mkdir -p ~/.zsh-uninstall-backup && cp ~/.zlogin ~/.zlogout ~/.zprofile ~/.zshenv ~/.zshrc ~/.zsh-uninstall-backup/
+```
+
+バックアップが完了したら、以下の「アンインストールコマンド」でアンインストールします。
+
+```sh:アンインストールコマンド
+rm -rf ~/.zprezto ~/.zshrc ~/.zlogin ~/.zlogout ~/.zpreztorc ~/.zprofile ~/.zshenv
+```
+
+### Preztoのアンインストール後の.zshrcの修正
+
+アンインストール後の `~/.zshrc` に以下の記述がある場合は不要なので削除します。
+
+```sh:.zshrc
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 ```

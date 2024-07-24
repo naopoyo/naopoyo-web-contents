@@ -12,11 +12,11 @@ preview: null
 
 ## この記事について
 
-TypeScript/JavascriptでBase64のエンコードとデコードの方法を紹介しています。Node.jsの場合は[Buffer](#bufferを使用する場合)を、それ以外の場合は[TextEncoderとTextDecoderを使う](#unicode文字列を扱う場合-その1-textencoderとtextdecoderを使う)ことをおすすめします。
+TypeScript/JavascriptでBase64のエンコードまたはデコードをする方法を紹介しています。Node.jsの場合は[Buffer](#bufferを使用する場合)を、それ以外の場合は[TextEncoderとTextDecoderを使う](#unicode文字列を扱う場合-その1-textencoderとtextdecoderを使う)ことをおすすめします。
 
 ## Bufferを使用する場合
 
-Node.jsの場合はBufferを使用できます。以下のようにimportします。
+Node.jsの場合はBufferを使用できます。次のようにimportします。
 
 ```typescript
 import { Buffer } from 'buffer'

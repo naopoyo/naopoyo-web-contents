@@ -4,7 +4,7 @@ emoji: 🛸
 title: PreztoでZshをカスタマイズする
 slug: customizing-zsh-with-prezto
 published_at: 2024-07-24 00:30:06
-modified_at: 2024-07-24 00:30:06
+modified_at: 2024-07-24 21:45:14
 tags:
   - zsh
 preview: null

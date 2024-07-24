@@ -1,7 +1,7 @@
 ---
 draft: false
 emoji: 🛸
-title: PreztoでZshをカスタマイズする
+title: Preztoでzshをカスタマイズする
 slug: customizing-zsh-with-prezto
 published_at: 2024-07-24 00:30:06
 modified_at: 2024-07-24 21:45:14
@@ -13,7 +13,7 @@ type: default
 
 ## この記事について
 
-Zshの設定フレームワークであるPreztoについてまとめています。
+zshの設定フレームワークであるPreztoでzshをカスタマイズする方法について紹介しています。
 
 ::link-card[https://github.com/sorin-ionescu/prezto]
 
@@ -60,6 +60,30 @@ done
 - .zshenv -> ~/.zprezto/runcoms/zshenv
 - .zshrc -> ~/.zprezto/runcoms/zshrc
 
+## テーマ関連コマンド早見表
+
+| コマンド            | 説明                                   |
+| ------------------- | -------------------------------------- |
+| `prompt -c`         | 適用しているテーマを確認               |
+| `prompt -l`         | 使用可能なテーマ一覧を表示する         |
+| `prompt -p`         | テーマのプレビュー一覧を表示する       |
+| `prompt -s <theme>` | 一時的にテーマを指定したものに設定する |
+
+## Gitプライグインを追加する
+
+`.zpreztorc` を開いて以下のように修正する。
+
+```text:.zpreztorc
+# Set the Prezto modules to load (browse modules).
+# The order matters.
+zstyle ':prezto:load' pmodule \
+  'git' \ // [!code ++]
+  'environment' \
+  # ... 中略 ... #
+  'completion' \
+  'prompt'
+```
+
 ## Preztoのアップデート
 
 zshの構成ファイルを編集していない場合は公式のREADME.mdに記載されている次のコマンドで更新できます。
@@ -89,30 +113,6 @@ git pull
 git stash pop # [!code highlight]
 git submodule sync --recursive
 git submodule update --init --recursive
-```
-
-## テーマ関連コマンド早見表
-
-| コマンド            | 説明                                   |
-| ------------------- | -------------------------------------- |
-| `prompt -c`         | 適用しているテーマを確認               |
-| `prompt -l`         | 使用可能なテーマ一覧を表示する         |
-| `prompt -p`         | テーマのプレビュー一覧を表示する       |
-| `prompt -s <theme>` | 一時的にテーマを指定したものに設定する |
-
-## Gitプライグインを追加する
-
-`.zpreztorc` を開いて以下のように修正する。
-
-```text:.zpreztorc
-# Set the Prezto modules to load (browse modules).
-# The order matters.
-zstyle ':prezto:load' pmodule \
-  'git' \ // [!code ++]
-  'environment' \
-  # ... 中略 ... #
-  'completion' \
-  'prompt'
 ```
 
 ## Preztoのアンインストール

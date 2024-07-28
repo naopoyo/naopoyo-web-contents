@@ -4,7 +4,7 @@ emoji: ✏️
 title: Hacker SheetのMarkdown記法の仕様
 slug: hackersheet-markdown-spec
 published_at: 2024-07-18 02:04:21
-modified_at: 2024-07-19 21:26:25
+modified_at: 2024-07-28 23:41:11
 tags:
   - Hacker Sheet
   - Markdown
@@ -382,6 +382,14 @@ Hacker Sheetでは以下のMarkdown拡張が利用可能です。
 
 ```markdown:Markdown
 ::youtube[https://www.youtube.com/watch?v=jNQXAC9IVRw]
+```
+
+### GitHub Gistの埋め込み
+
+::gist[https://gist.github.com/naopoyo/a86f5f9414a7b547d7df338a5d2f1873]
+
+```markdown:Markdown
+::gist[https://gist.github.com/naopoyo/a86f5f9414a7b547d7df338a5d2f1873]
 ```
 
 ### リンクカードの表示

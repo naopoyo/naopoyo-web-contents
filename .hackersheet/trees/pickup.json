@@ -31,6 +31,11 @@
       "name": "pickup06",
       "slug": "pickup06",
       "path": "docs/2024/2024-07-18-hacker-sheetのmarkdown記法の仕様.md"
+    },
+    {
+      "name": "pickup07",
+      "slug": "pickup07",
+      "path": "docs/2023/2023-10-16-typescriptのbase64のエンコードとデコード.md"
     }
   ]
 }

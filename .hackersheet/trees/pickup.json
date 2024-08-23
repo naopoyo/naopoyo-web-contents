@@ -1,0 +1,36 @@
+{
+  "name": "おすすめ記事",
+  "slug": "pickup",
+  "nodes": [
+    {
+      "name": "pickup01",
+      "slug": "pickup01",
+      "path": "docs/2024/2024-01-08-next.jsのthird-party-librariesを使ってgoogle-analyticsを導入する.md"
+    },
+    {
+      "name": "pickup02",
+      "slug": "pickup02",
+      "path": "docs/2024/2024-01-20-markdownのコードブロックで将棋の棋譜プレーヤーを埋め込む.md"
+    },
+    {
+      "name": "pickup03",
+      "slug": "pickup03",
+      "path": "docs/2024/2024-01-10-開発者向けのヘッドレスcmsを開発しています.md"
+    },
+    {
+      "name": "pickup04",
+      "slug": "pickup04",
+      "path": "docs/2024/2024-07-20-初心者でも簡単にnext.jsでブログサイトが作れる手順書.md"
+    },
+    {
+      "name": "pickup05",
+      "slug": "pickup05",
+      "path": "docs/2024/2024-06-16-色々なコマンドのチートシート.md"
+    },
+    {
+      "name": "pickup06",
+      "slug": "pickup06",
+      "path": "docs/2024/2024-07-18-hacker-sheetのmarkdown記法の仕様.md"
+    }
+  ]
+}

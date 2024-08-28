@@ -1,13 +1,13 @@
 ---
 draft: false
 emoji: 🐖
-title: Frontmatter CMSでランダムに絵文字を設定できるフィールドを作成する
+title: Front Matter CMSでランダムに絵文字を設定できるフィールドを作成する
 slug: create-a-field-that-allows-random-emoji-setting-in-frontmatter-cms
 published_at: 2024-08-29 00:27:40
 modified_at: 2024-08-29 00:27:40
 tags:
+  - Front Matter CMS
   - Markdown
-  - Frontmatter CMS
 preview: null
 ---
 

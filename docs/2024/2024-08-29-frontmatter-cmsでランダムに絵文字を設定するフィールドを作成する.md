@@ -105,4 +105,4 @@ function makeRandomEmoji() {
 
 ## 参考
 
-::link-card[https://frontmatter.codes/docs/content-creation/field-actions#creating-a-new-script]
+::link-card[https://frontmatter.codes/docs/content-creation/field-actions]

@@ -27,7 +27,7 @@ preview: null
 
 ## 例
 
-```text
+```tree
 .
 ├── a.md
 └── b.md

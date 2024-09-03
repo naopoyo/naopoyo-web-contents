@@ -4,7 +4,7 @@ emoji: 🔮
 title: ファイル移動時にMarkdownのリンクを自動的に変更するVS Codeの設定
 slug: vscode-update-links-on-file-move
 published_at: 2024-01-19 01:18:00
-modified_at: 2024-01-19 01:18:00
+modified_at: 2024-09-04 00:06:55
 tags:
   - Markdown
   - VS Code
@@ -12,6 +12,8 @@ preview: null
 ---
 
 ## 設定方法
+
+VS Codeで次のように設定すると、Markdownのファイルを移動したときにリンクを自動的に変更してくれます。
 
 ```json:.vscode/settings.json
 {
@@ -23,11 +25,9 @@ preview: null
 - `always`: 自動的に変更
 - `never`: 無効
 
-このように設定することで、Markdownのファイルを移動したときにリンクを自動的に変更してくれます。
-
 ## 例
 
-```tree
+```tree:ファイル構成
 .
 ├── a.md
 └── b.md

@@ -11,6 +11,40 @@ tags:
 preview: null
 ---
 
+## ディレクトリ構成
+
+```tree:ディレクトリ構成
+Project Root
+├── Taskfile.yaml
+├── docker
+│   ├── docker-compose.yml
+│   └── server
+│       └── Dockerfile
+└── server
+    └── .devcontainer
+        └── devcontainer.json
+```
+
+## Taskfile.yml作成
+
+```yaml:Taskfile.yml
+version: '3'
+
+tasks:
+  'dev:build':
+    desc: 開発環境コンテナビルド
+    cmds:
+      - docker-compose -f docker/docker-compose.yml up -d --build
+  'dev:start':
+    desc: 開発環境コンテナ起動
+    cmds:
+      - docker-compose -f docker/docker-compose.yml up -d
+  'dev:stop':
+    desc: 開発環境コンテナ停止
+    cmds:
+      - docker-compose -f docker/docker-compose.yml down
+```
+
 ## Dockerfile作成
 
 ```dockerfile:docker/server/Dockerfile
@@ -38,7 +72,7 @@ name: "project"
 volumes:
   db_data:
   redis_data:
-  server_vendor:
+  server_bundle:
   server_workspace_root:
 
 services:
@@ -51,7 +85,7 @@ services:
     volumes:
       - ../:/var/workspace/:cached
       - ~/.ssh/:/root/.ssh/
-      - server_vendor:/var/workspace/server/vendor
+      - server_bundle:/usr/local/bundle
       - server_workspace_root:/root/
     ports:
       - 3000:3000
@@ -116,7 +150,8 @@ gem 'rails'
 ## rails gemをインストール
 
 ```sh:Terminal
-bundle install --path vendor/bundle --jobs=4
+bundle config set path 'vendor/bundle'
+bundle install
 ```
 
 ## rails new
@@ -142,8 +177,26 @@ bundle exec rails new . -B --api -d mysql --skip-test
 vendor/bundle
 ```
 
+## Dotenvを追加
+
+Gemfileの次の記述を追加して `bundle install` を実行します。
+
+```ruby:Gemfile
+group :development, :test do
+  # ...
+  gem "dotenv-rails"
+end
+```
+
 ## DBセットアップ
 
 ```sh:Terminal
 bundle exec rails db:setup
+bundle exec rails db:migrate
+```
+
+## 開発サーバー起動
+
+```sh:Teminal
+bundle exec rails s -b 0.0.0.0
 ```

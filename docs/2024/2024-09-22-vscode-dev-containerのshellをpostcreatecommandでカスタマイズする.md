@@ -14,9 +14,7 @@ preview: null
 
 ## 概要
 
-VSCode Dev Containerのzshをカスタマイズします。カスタマイズの処理は `postCreateCommand` でスクリプトを実行して行います。
-
-Preztoとpecoをインストールして必要事項を設定していきます。
+VSCode Dev ContainerのzshをPreztoとpecoをインストールしてカスタマイズします。カスタマイズの処理は `postCreateCommand` でスクリプトを実行して行います。
 
 ## Dev Containerの設定
 
@@ -30,7 +28,7 @@ Preztoとpecoをインストールして必要事項を設定していきます�
 
 ## `postCreateCommand` で実行するスクリプト
 
-```sh:.devcontainer/.devcontainer/post-create-command.sh
+```sh:.devcontainer/post-create-command.sh
 #!/bin/zsh
 
 echo "Setup start"

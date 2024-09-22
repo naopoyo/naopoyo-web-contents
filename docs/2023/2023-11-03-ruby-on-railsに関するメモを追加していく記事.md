@@ -51,3 +51,9 @@ User.find_in_batches(batch_size: 500) do |users|
   end
 end
 ```
+
+## インストールしたGemのYARDドキュメントを作成する
+
+```sh:Terminal
+bundle exec yard gems
+```

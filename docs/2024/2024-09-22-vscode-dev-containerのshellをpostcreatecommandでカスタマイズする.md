@@ -74,7 +74,7 @@ EOF
   )
   sed -i "/${ZPREZTORC_SEARCH_STRING}/a ${ZPREZTORC_SETTINGS_LINES}" "$ZPREZTORC_PATH"
 
-  # .zpreztorcにgitのテーマ設定を変更
+  # .zpreztorcのテーマ設定を変更
   sed -i "s/^zstyle ':prezto:module:prompt' theme '.*'/zstyle ':prezto:module:prompt' theme 'cloud'/" "$ZPREZTORC_PATH"
 
   ZSHRC_PATH="${ZDOTDIR:-$HOME}/.zshrc"

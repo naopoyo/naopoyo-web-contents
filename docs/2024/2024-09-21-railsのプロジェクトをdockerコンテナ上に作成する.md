@@ -6,8 +6,9 @@ slug: create-a-rails-project-on-a-docker-container
 published_at: 2024-09-21 10:35:50
 modified_at: 2024-09-21 10:35:50
 tags:
-  - Ruby
   - Rails
+  - Ruby
+  - Docker
 preview: null
 ---
 

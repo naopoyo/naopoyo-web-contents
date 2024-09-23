@@ -36,9 +36,9 @@ echo "Setup start"
 ZPREZTO_DIR="${ZDOTDIR:-$HOME}/.zprezto"
 
 # Install prezto
-if [ ! -d "$ZPREZTO_DIR" ]; then
-  echo "Install prezto"
+echo "Install prezto"
 
+if [ ! -d "$ZPREZTO_DIR" ]; then
   git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
   setopt EXTENDED_GLOB
@@ -74,24 +74,38 @@ EOF
   )
   sed -i "/${ZPREZTORC_SEARCH_STRING}/a ${ZPREZTORC_SETTINGS_LINES}" "$ZPREZTORC_PATH"
 
-  # .zpreztorcのテーマ設定を変更
+  # .zpreztorcにgitのテーマ設定を変更
   sed -i "s/^zstyle ':prezto:module:prompt' theme '.*'/zstyle ':prezto:module:prompt' theme 'cloud'/" "$ZPREZTORC_PATH"
 
   ZSHRC_PATH="${ZDOTDIR:-$HOME}/.zshrc"
+else
+  echo "Prezto installed"
+fi
+
+echo "Install peco"
+
+PECO_TAR_GZ_PATH="${ZDOTDIR:-$HOME}/peco_linux_amd64.tar.gz"
+if [ ! -f "$PECO_TAR_GZ_PATH" ]; then
+  wget https://github.com/peco/peco/releases/download/v0.5.10/peco_linux_amd64.tar.gz -P ${ZDOTDIR:-$HOME}
+  echo "File downloaded successfully via wget."
+else
+  echo "File downloaded successfully via wget."
+fi
+
+PECO_DIR="${ZDOTDIR:-$HOME}/peco_linux_amd64"
+if [ ! -d "$PECO_DIR" ]; then
+  tar zxvf $PECO_TAR_GZ_PATH -C ${ZDOTDIR:-$HOME}
+  echo "The tar archive has been fully extracted."
+else
+  echo "The tar archive has been fully extracted."
 fi
 
 PECO_PATH=/usr/local/bin/peco
-
-# Install peco
 if [ ! -f "$PECO_PATH" ]; then
-  echo "Install peco"
-
-  wget https://github.com/peco/peco/releases/download/v0.5.10/peco_linux_amd64.tar.gz
-  tar zxvf peco_linux_amd64.tar.gz
-  cp -p peco_linux_amd64/peco /usr/local/bin
-
-  rm peco_linux_amd64.tar.gz
-  rm -rf peco_linux_amd64
+  ln -s "${PECO_DIR}/peco" $PECO_PATH
+  echo "The symbolic link has been successfully created."
+else
+  echo "The symbolic link has been successfully created."
 fi
 
 echo "Setup end"

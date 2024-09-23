@@ -1,8 +1,8 @@
 ---
 draft: false
 emoji: 😉
-title: VSCode Dev ContainerのShellをpostCreateCommandでカスタマイズする
-slug: customize-the-shell-of-vscode-dev-container-with-post-create-command
+title: VSCode Dev ContainerのzshをpostCreateCommandでカスタマイズする
+slug: customize-zsh-of-vscode-dev-container-with-post-create-command
 published_at: 2024-09-22 14:26:27
 modified_at: 2024-09-22 14:26:27
 tags:

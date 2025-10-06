@@ -247,6 +247,7 @@ $$
 脚注には複数行を含めることもできます[^2]。
 
 [^1]: 参考資料。
+
 [^2]:
     脚注内に改行を追加するには、新しい行の前に 2 つのスペースを付けます。  
     これは 2 行目です。
@@ -576,8 +577,8 @@ Hacker Sheetでは以下のMarkdown拡張が利用可能です。
 
 文章内から、特定の手数に移動させることができます。
 
-:kifu-to[mykifu:0]{label="開始局面"} に移動、:kifu-to[mykifu:3] に移動。
+:kifu-to[mykifu#0]{label="開始局面"} に移動、:kifu-to[mykifu#3] に移動。
 
 ```markdown:Markdown
-:kifu-to[mykifu:0]{label="開始局面"} に移動、:kifu-to[mykifu:3] に移動。
+:kifu-to[mykifu#0]{label="開始局面"} に移動、:kifu-to[mykifu#3] に移動。
 ```

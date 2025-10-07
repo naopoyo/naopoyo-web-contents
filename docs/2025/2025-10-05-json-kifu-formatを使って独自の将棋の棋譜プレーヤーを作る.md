@@ -13,11 +13,11 @@ preview: null
 
 ## 概要
 
-[Kifu for JS](https://kifu-for-js.81.la/)がReact 19で動かないので作ることにした。React 19で動く修正コードのプルリクエストを出したりするのがカッコ良いのだろうが。
+[Kifu for JS](https://kifu-for-js.81.la/)がReact 19で動かないので作ることにした。React 19で動く修正コードのプルリクエストを出したりするのがカッコ良いのだろうけれど大変そうなので断念。
 
-json-kifu-format と shogi.js というライブラリがとても良いので自分でプレーヤーを作る方が簡単。将棋の駒の動き、棋譜データからの盤面情報の構築など全てやってくれる。
+json-kifu-format と shogi.js というライブラリがとても素晴らしいので自分でプレーヤーを作る方が簡単。棋譜データからの盤面情報の構築、駒を動かす処理など全て揃っている。
 
-この記事では自分で将棋プレーヤーを作ろうという時に参考になるであろう情報を残しておく。
+この記事では上記ライブラリを使用して独自の将棋プレーヤーを作ろうという時に参考になるかもしれない情報を残しておく。
 
 ## JKFPlayer
 
@@ -41,7 +41,7 @@ const kifuText = `
 const player = JKFPlayer.parse(kifuText.trim());
 ```
 
-### 盤面の情報
+## 盤面の情報
 
 `player.shogi.board` に読み込んだ棋譜の初期盤面が入っている。`Piece` の二次元配列。
 
@@ -49,8 +49,19 @@ const player = JKFPlayer.parse(kifuText.trim());
 
 この情報は `player.forward();` や `player.backward();` などで手数を進めたり戻したりすると変更される。
 
-### 持ち駒の情報
+## 持ち駒の情報
 
 `player.shogi.hands` に持ち駒の情報が入っている。`Piece` の二次元配列。
 
 `player.shogi.hands[0]` は先手の持ち駒。`player.shogi.hands[1]` は後手の持ち駒。
+
+## JKFPlayerの便利なstaticメソッド
+
+- `numToZen(n: number): string`  
+  数字を全角に変換
+- `numToKan(n: number): string`  
+  数字を漢数字に変換
+- `kindToKan(kind: Kind): string`  
+  `Kind` を漢字に変換
+- `moveToReadableKifu(mv: IMoveFormat): string`  
+  `IMoveFormat` を `６八飛` のような文字列に変換

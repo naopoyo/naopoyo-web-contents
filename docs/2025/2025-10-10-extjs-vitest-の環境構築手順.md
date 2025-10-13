@@ -4,7 +4,7 @@ emoji: 🍕
 title: Next.js + Vitest の環境構築手順
 slug: nextjs-and-vitest-environment-setup-guide
 published_at: 2025-10-10 00:24:00
-modified_at: 2025-10-10 00:24:00
+modified_at: 2025-10-13 22:17:09
 tags:
   - Vitest
   - Next.js
@@ -38,7 +38,7 @@ export default defineConfig({
 
 ## package.json の scripts
 
-次のように設定することで便利になります。
+package.json の scripts を次のように設定することで便利になります。
 
 ```json:package.json
 {

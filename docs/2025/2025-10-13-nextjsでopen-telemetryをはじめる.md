@@ -27,7 +27,7 @@ export function register() {
 }
 ```
 
-## 　OpenTelemetry Collector（OTel Collector）をローカル開発環境で動かす
+## OpenTelemetry Collector（OTel Collector）をローカル開発環境で動かす
 
 ```bash:Terminal
 git clone git@github.com:vercel/opentelemetry-collector-dev-setup.git
@@ -40,5 +40,7 @@ docker-compose up -d
 - Jaeger at http://localhost:16686
 - Zipkin at http://localhost:9411
 - Prometheus at http://localhost:9090
+
+---
 
 [開発日記-2025-10-11](2025-10-11-開発日記.md) に関連のリンクがある。

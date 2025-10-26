@@ -1,7 +1,7 @@
 ---
 draft: false
 emoji: 💺
-title: React Hook Form と Valibot の Debounce
+title: React Hook Form と Valibot の debounce
 slug: debounce-of-react-hook-form-and-valibot
 published_at: 2025-10-26 19:53:00
 modified_at: 2025-10-26 19:53:00
@@ -14,7 +14,7 @@ preview: null
 
 ## はじめに
 
-React Hook Form と Valibot を用いたフォーム実装において、メールアドレスの重複チェックなどサーバー側の非同期バリデーションを行うと、入力ごとに API を呼び出してしまい、パフォーマンスやコストに悪影響を与えることがあります。こうした問題に対して有効なのが「デバウンス」です。ユーザーの入力が停止してから一定時間待機してから検証を実行することで、不要なリクエストを削減できます。
+React Hook Form と Valibot を用いたフォーム実装において、メールアドレスの重複チェックなどサーバー側の非同期バリデーションを行うと、入力ごとに API を呼び出してしまい、パフォーマンスやコストに悪影響を与えることがあります。こうした問題に対して有効なのが「デバウンス（debounce）」です。ユーザーの入力が停止してから一定時間待機してから検証を実行することで、不要なリクエストを削減できます。
 
 本記事では、React Hook Form と Valibot にデバウンスを組み込む方法を実装例とともに示します。中心となるのはカスタムフック `useDebouncedCheck` と、これを利用するフォームフック `useSignupForm` です。サンプルリポジトリも用意しているため、手元で動作を確認しながら理解を深めてください。
 

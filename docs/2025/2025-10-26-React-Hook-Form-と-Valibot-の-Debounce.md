@@ -44,12 +44,15 @@ React Hook Form と Valibot を用いたフォーム実装において、メー�
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-type ValidateFn<T> = (value: T) => Promise<boolean> | boolean;
+type ValidateResult = boolean | Promise<boolean>;
+
+type ValidateFn<T> = (value: T) => ValidateResult;
 
 type Options<T> = {
   delay?: number;
   negate?: boolean;
   defaultValue?: T | undefined;
+  maxCacheSize?: number;
 };
 
 export function useDebouncedValidator<T = string>(
@@ -57,11 +60,10 @@ export function useDebouncedValidator<T = string>(
   options: Options<T> = {}
 ) {
   const memoizedOptions = useMemo(() => options, [options]);
-  const { delay = 500, negate = false, defaultValue } = memoizedOptions;
+  const { delay = 500, negate = false, defaultValue, maxCacheSize = 100 } = memoizedOptions;
 
   const [lastResult, setLastResult] = useState(false);
-  const lastValueRef = useRef<T | undefined>(defaultValue);
-  const lastResultRef = useRef(false);
+  const cacheRef = useRef(new Map<T, boolean>());
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pendingResolversRef = useRef<Array<(result: boolean) => void>>([]);
   const pendingValueRef = useRef<T | undefined>(undefined);
@@ -75,25 +77,42 @@ export function useDebouncedValidator<T = string>(
     async (currentValue: T) => {
       try {
         const rawResult = await validate(currentValue);
-        const result = negate ? !rawResult : rawResult;
+        const result = Boolean(rawResult);
 
-        lastValueRef.current = currentValue;
-        lastResultRef.current = result;
-        if (lastResult !== result) {
-          setLastResult(result);
+        // Limit cache size
+        if (cacheRef.current.size >= maxCacheSize) {
+          const firstKey = cacheRef.current.keys().next().value;
+          if (firstKey !== undefined) {
+            cacheRef.current.delete(firstKey);
+          }
         }
-        flushResolvers(result);
+
+        cacheRef.current.set(currentValue, result);
+        const finalResult = negate ? !result : result;
+        if (lastResult !== finalResult) {
+          setLastResult(finalResult);
+        }
+        flushResolvers(finalResult);
       } catch {
         const result = false;
-        lastValueRef.current = currentValue;
-        lastResultRef.current = result;
-        if (lastResult !== result) {
-          setLastResult(result);
+
+        // Limit cache size
+        if (cacheRef.current.size >= maxCacheSize) {
+          const firstKey = cacheRef.current.keys().next().value;
+          if (firstKey !== undefined) {
+            cacheRef.current.delete(firstKey);
+          }
         }
-        flushResolvers(result);
+
+        cacheRef.current.set(currentValue, result);
+        const finalResult = negate ? !result : result;
+        if (lastResult !== finalResult) {
+          setLastResult(finalResult);
+        }
+        flushResolvers(finalResult);
       }
     },
-    [validate, negate, lastResult]
+    [validate, negate, lastResult, maxCacheSize]
   );
 
   const debouncedValidator = useCallback(
@@ -102,8 +121,9 @@ export function useDebouncedValidator<T = string>(
         return Promise.resolve(true);
       }
 
-      if (lastValueRef.current === value && timerRef.current === null) {
-        return Promise.resolve(lastResultRef.current);
+      if (cacheRef.current.has(value)) {
+        const cachedResult = cacheRef.current.get(value)!;
+        return Promise.resolve(negate ? !cachedResult : cachedResult);
       }
 
       return new Promise<boolean>((resolve) => {
@@ -126,7 +146,7 @@ export function useDebouncedValidator<T = string>(
         }, delay);
       });
     },
-    [delay, defaultValue, performValidation]
+    [delay, defaultValue, performValidation, negate]
   );
 
   useEffect(() => {
@@ -135,7 +155,7 @@ export function useDebouncedValidator<T = string>(
         clearTimeout(timerRef.current);
         timerRef.current = null;
       }
-      flushResolvers(lastResultRef.current);
+      flushResolvers(false);
     };
   }, []);
 
@@ -175,9 +195,9 @@ export type Inputs = v.InferOutput<ReturnType<typeof inputSchema>>;
 
 export function useSignupForm() {
   const isValidEmail = async (value: string) => {
-    const response = await fetch('/api?email=' + encodeURIComponent(value), {
-      method: 'GET',
-    });
+    const url = new URL('/api', window.location.origin);
+    url.searchParams.set('email', value);
+    const response = await fetch(url);
     const data = (await response.json()) as { result: boolean };
     return !data.result;
   };

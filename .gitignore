@@ -1,3 +1,5 @@
 /node_modules
 /.vscode
 /.serena
+/.hackersheet/cli.config.json
+/.hackersheet/templates

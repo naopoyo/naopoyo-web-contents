@@ -1,15 +1,17 @@
 {
-  "packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1",
   "scripts": {
-    "prettier:write": "prettier --write --ignore-unknown .",
+    "doc": "hscli docs",
     "format": "pnpm prettier:write",
+    "format:package": "pnpm dlx sort-package-json",
+    "ncu": "pnpm dlx npm-check-updates",
     "new": "hscli new",
-    "doc": "hscli docs"
+    "prettier:write": "prettier --write --ignore-unknown ."
   },
   "devDependencies": {
-    "@frontmatter/extensibility": "0.0.17",
-    "@hackersheet/cli": "0.1.0-alpha.1",
-    "npm-check-updates": "17.1.0",
-    "prettier": "3.3.3"
-  }
+    "@frontmatter/extensibility": "0.0.18",
+    "@hackersheet/cli": "0.1.0-alpha.2",
+    "npm-check-updates": "17.1.18",
+    "prettier": "3.6.2"
+  },
+  "packageManager": "pnpm@10.20.0+sha512.cf9998222162dd85864d0a8102e7892e7ba4ceadebbf5a31f9c2fce48dfce317a9c53b9f6464d1ef9042cba2e02ae02a9f7c143a2b438cd93c91840f0192b9dd"
 }

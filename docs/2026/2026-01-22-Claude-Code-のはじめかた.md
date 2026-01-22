@@ -82,6 +82,22 @@ Ghostty はターミナルエミュレータです。次のように、Homebrew�
 brew install --cask ghostty
 ```
 
+## Devcontainer で Claude Code を使用する
+
+`devcontainer.json` に以下の設定を追記する。
+
+```json:devcontainer.json
+{
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {}, // node が不要な場合は取り除く
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
+  },
+  "mounts": ["source=${localEnv:HOME}/.claude,target=/home/vscode/.claude,type=bind"],
+}
+```
+
+::link-card[https://github.com/anthropics/devcontainer-features]
+
 ## 参考
 
 ::link-card[https://code.claude.com/docs/ja/overview]

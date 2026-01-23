@@ -12,7 +12,7 @@ preview: null
 
 ## 概要
 
-Claude Code の機能やテクニックを整理してる記事です。
+Claude Code の機能やテクニックを整理した記事です。
 
 ## スキル
 

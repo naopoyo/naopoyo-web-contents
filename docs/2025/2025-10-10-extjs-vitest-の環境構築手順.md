@@ -65,3 +65,5 @@ package.json の scripts を次のように設定することで便利になり�
 ::link-card[https://zenn.dev/globis/articles/d98ea21ce0b887]
 
 ::link-card[https://www.epicweb.dev/why-i-won-t-use-jsdom]
+
+::link-card[https://qiita.com/masafumi1073/items/54507efc02e167a64e73]

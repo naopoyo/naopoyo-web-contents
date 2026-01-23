@@ -40,6 +40,12 @@ Claude Code の機能やテクニックを整理した記事です。
 | `/skills` | 使用可能なスキルの確認                                   |
 | `/plugin` | 追加したマーケットプレイスやインストールしたスキルの確認 |
 
+### Skills.sh
+
+以下のサイトでスキルを探すことができます。
+
+::link-card[https://skills.sh/]
+
 ## 仕様駆動開発（spec-kit）
 
 ::link-card[https://zenn.dev/gmomedia/articles/8ccf71e50858de]

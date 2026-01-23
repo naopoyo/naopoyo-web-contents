@@ -4,34 +4,40 @@ emoji: 🍕
 title: Next.js + Vitest の環境構築手順
 slug: nextjs-and-vitest-environment-setup-guide
 published_at: 2025-10-10 00:24:00
-modified_at: 2025-10-13 22:17:09
+modified_at: 2026-01-23 19:03:19
 tags:
   - Vitest
   - Next.js
 preview: null
 ---
 
-## 参考
-
-::link-card[https://nextjs.org/docs/app/guides/testing/vitest]
-
 ## 必要なパッケージのインストール
 
 ```bash:Terminal
-pnpm add -D -E vitest @vitejs/plugin-react jsdom @testing-library/react @testing-library/dom vite-tsconfig-paths @vitest/coverage-v8
+pnpm add -D -E vitest @vitest/browser-playwright @vitejs/plugin-react @testing-library/react @testing-library/dom vite-tsconfig-paths @vitest/coverage-v8
 ```
 
 ## 設定ファイルの作成
 
 ```ts:vitest.config.mts
 import { defineConfig } from 'vitest/config'
+import { playwright } from '@vitest/browser-playwright'
 import react from '@vitejs/plugin-react'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
   plugins: [tsconfigPaths(), react()],
   test: {
-    environment: 'jsdom',
+    browser: {
+      enabled: true,
+      provider: playwright(),
+      headless: true,
+      instances: [
+        {
+          browser: 'chromium',
+        },
+      ],
+    },
   },
 })
 ```
@@ -51,3 +57,11 @@ package.json の scripts を次のように設定することで便利になり�
   },
 }
 ```
+
+## 参考
+
+::link-card[https://nextjs.org/docs/app/guides/testing/vitest]
+
+::link-card[https://zenn.dev/globis/articles/d98ea21ce0b887]
+
+::link-card[https://www.epicweb.dev/why-i-won-t-use-jsdom]

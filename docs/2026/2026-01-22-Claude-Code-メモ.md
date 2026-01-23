@@ -16,7 +16,7 @@ Claude Code の機能やテクニックを整理してる記事です。
 
 ## スキル
 
-:link-card[https://code.claude.com/docs/ja/skills]
+::link-card[https://code.claude.com/docs/ja/skills]
 
 「特定の専門タスクを実行する手順」を教え込み、必要な時だけ自動的に呼び出させるための拡張機能です。
 

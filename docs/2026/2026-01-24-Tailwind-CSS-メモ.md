@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 emoji: 🙃
 title: Tailwind CSS メモ
 slug: tailwind-css-notes
@@ -17,19 +17,23 @@ preview: null
 
 ### `HEADER_CLASS` のような定数に定義したクラスを対象にする
 
-```typescript
-settings: {
-  'better-tailwindcss': {
-    variables: [
-      [
-        '^.*_CLASS$',
-        [
-          {
-            match: 'strings',
-          },
+```typescript:eslint.config.mjs
+const eslintConfig = defineConfig([
+  // ...
+    settings: {
+      'better-tailwindcss': {
+        variables: [
+          [
+            '^.*_CLASS$',
+            [
+              {
+                match: 'strings',
+              },
+            ],
+          ],
         ],
-      ],
-    ],
-  },
-},
+      },
+    },
+  // ...
+])
 ```

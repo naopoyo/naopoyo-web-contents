@@ -37,3 +37,18 @@ const eslintConfig = defineConfig([
   // ...
 ])
 ```
+
+VS Code の Tailwind CSS IntelliSense を使用している場合は `.vscode/settings.json` に以下を設定する。
+
+```json:settings.json
+{
+  // ...
+  "tailwindCSS.experimental.classRegex": [
+    // ...
+    [".+CLASS.+=.+`([^`]*)`"],
+    [".+CLASS.+=.+'([^']*)'"],
+    [".+CLASS.+=.+\"([^\"]*)\""],
+  ],
+  // ...
+}
+```

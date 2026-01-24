@@ -2,7 +2,7 @@
 draft: false
 emoji: 🛖
 title: Claude Code のはじめかた
-slug: null
+slug: how-to-get-started-with-claude-code
 published_at: 2026-01-22 14:00:18
 modified_at: 2026-01-22 14:00:18
 tags:
@@ -14,7 +14,7 @@ preview: null
 
 Claude Code のセットアップ方法を記録しています。2026年1月時点でのプラン、料金を記載しています。
 
-## Claude.ai　のアカウントを作成
+## Claude.ai のアカウントを作成
 
 [Claude.ai](https://claude.ai) のアカウントを作成します。月額 $20 の Pro プランで契約します。Free プランではウェブ上でのチャットしか使えないので Pro プラン以上を契約する必要があります。
 

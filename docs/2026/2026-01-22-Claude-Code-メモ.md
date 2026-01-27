@@ -14,6 +14,42 @@ preview: null
 
 Claude Code の機能やテクニックを整理した記事です。
 
+## 通知を受け取る
+
+以下の記事を参考に設定します。
+
+::link-card[https://zenn.dev/the_exile/articles/claude-code-hooks]
+
+::link-card[https://zenn.dev/gki/articles/1ee8d78a10ede2]
+
+注意する点は
+
+- Mac の設定で通知を許可する。Ghostty などを使っている場合はそのアプリの通知許可が必要かもしれない。
+
+### 通知を受け取るための設定ファイル
+
+次のような設定がされていれば良い。
+
+```json:~/.claude/settings.json
+{
+  // ...
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "idle_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Claude Code is waiting for you.\" with title \"Claude Code\"'"
+          }
+        ]
+      }
+    ]
+  },
+  // ...
+}
+```
+
 ## スキル
 
 ::link-card[https://code.claude.com/docs/ja/skills]

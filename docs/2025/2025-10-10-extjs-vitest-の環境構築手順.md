@@ -74,6 +74,20 @@ package.json の scripts を次のように設定することで便利になり�
 }
 ```
 
+## playwright のインストール
+
+Playwright の実行に必要なブラウザ本体と依存ライブラリを、以下のコマンドでインストールします。
+
+```sh:Terminal
+pnpm dlx playwright install --with-deps
+```
+
+### playwright のアンインストールをしたい場合
+
+```sh:Terminal
+pnpm dlx playwright uninstall --all
+```
+
 ## 参考
 
 ::link-card[https://nextjs.org/docs/app/guides/testing/vitest]

@@ -14,6 +14,10 @@ preview: null
 
 Claude Code の機能やテクニックを整理した記事です。
 
+## Claude Code ベストプラクティス
+
+::link-card[https://code.claude.com/docs/en/best-practices]
+
 ## 通知を受け取る
 
 以下の記事を参考に設定します。

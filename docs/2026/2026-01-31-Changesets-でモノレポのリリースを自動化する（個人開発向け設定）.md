@@ -136,6 +136,16 @@ Added new validation API to core package
 > [!TIP]
 > changeset ファイルはコードと一緒にコミットします。
 
+### 変更をコミット・プッシュ
+
+changeset ファイルと変更したコードを一緒にコミットします。
+
+```bash
+git add .
+git commit -m "feat: add new validation API"
+git push
+```
+
 ### バージョンを更新する
 
 リリース準備ができたら、次のコマンドを実行します。
@@ -152,7 +162,7 @@ pnpm changeset version
 4. `CHANGELOG.md` を生成・更新
 5. 処理済みの changeset ファイルを削除（prerelease モードでは削除されない）
 
-### コミット・プッシュ
+### リリースをコミット・プッシュ
 
 ```bash
 git add .
@@ -170,10 +180,15 @@ git push
 # 2. 変更を記録
 pnpm changeset
 
-# 3. バージョン更新（CHANGELOG も生成される）
+# 3. 変更をコミット & プッシュ
+git add .
+git commit -m "chore: release"
+git push
+
+# 4. バージョン更新（CHANGELOG も生成される）
 pnpm changeset version
 
-# 4. コミット & プッシュ → 自動で npm に公開される
+# 5. リリースをコミット & プッシュ （
 git add .
 git commit -m "chore: release"
 git push
@@ -329,6 +344,7 @@ set -euo pipefail
 # Publish packages that have not been published yet
 # Used by changesets/action in GitHub Actions
 
+ROOT_DIR=$(pwd)
 PACKAGES=$(pnpm -r --filter '@example/*' --filter '!@example/sandbox-*' exec pwd)
 PUBLISHED=""
 
@@ -353,6 +369,8 @@ for dir in $PACKAGES; do
     fi
   fi
 done
+
+cd "$ROOT_DIR"
 
 echo ""
 echo "Published packages: ${PUBLISHED:-none}"

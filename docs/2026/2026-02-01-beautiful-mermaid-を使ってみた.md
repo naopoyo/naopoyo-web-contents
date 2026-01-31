@@ -73,13 +73,13 @@ classDiagram
 
 ```mermaid
 stateDiagram-v2
-    [*] --> 下書き
-    下書き --> レビュー中: 提出
-    レビュー中 --> 修正中: 差し戻し
-    レビュー中 --> 承認済み: 承認
-    修正中 --> レビュー中: 再提出
-    承認済み --> 公開: デプロイ
-    公開 --> [*]
+    [*] --> Draft
+    Draft --> InReview: Submit
+    InReview --> Revising: Reject
+    InReview --> Approved: Approve
+    Revising --> InReview: Resubmit
+    Approved --> Published: Deploy
+    Published --> [*]
 ```
 
 ## Mermaid サンプル5 - ER図
@@ -264,19 +264,19 @@ Cart,Bounce,50
 ```mermaid
 block-beta
 columns 3
-    Frontend["フロントエンド\nNext.js"]
+    Frontend["Frontend\nNext.js"]
     space
-    Backend["バックエンド\nNode.js"]
+    Backend["Backend\nNode.js"]
 
     space space space
 
     CDN["CDN\nCloudflare"]
-    LB["ロードバランサー"]
-    Cache["キャッシュ\nRedis"]
+    LB["Load Balancer"]
+    Cache["Cache\nRedis"]
 
     space space space
 
-    DB[("データベース\nPostgreSQL")]:3
+    DB[("Database\nPostgreSQL")]:3
 
     Frontend --> CDN
     Backend --> LB

@@ -247,7 +247,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '24'
-          cache: 'pnpm'
 
       - name: Check unpublished packages
         id: check

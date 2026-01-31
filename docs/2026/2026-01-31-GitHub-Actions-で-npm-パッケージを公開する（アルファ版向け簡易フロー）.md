@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 emoji: 🎤
 title: GitHub Actions で npm パッケージを公開する（アルファ版向け簡易フロー）
 slug: publish-npm-package-github-actions-alpha

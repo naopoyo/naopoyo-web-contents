@@ -264,17 +264,17 @@ Cart,Bounce,50
 ```mermaid
 block-beta
 columns 3
-    Frontend["フロントエンド\nNext.js"]:1
-    space:1
-    Backend["バックエンド\nNode.js"]:1
+    Frontend["フロントエンド\nNext.js"]
+    space
+    Backend["バックエンド\nNode.js"]
 
-    space:3
+    space space space
 
-    CDN["CDN\nCloudflare"]:1
-    LB["ロードバランサー"]:1
-    Cache["キャッシュ\nRedis"]:1
+    CDN["CDN\nCloudflare"]
+    LB["ロードバランサー"]
+    Cache["キャッシュ\nRedis"]
 
-    space:3
+    space space space
 
     DB[("データベース\nPostgreSQL")]:3
 

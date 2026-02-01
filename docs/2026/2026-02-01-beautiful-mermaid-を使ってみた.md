@@ -235,7 +235,7 @@ quadrantChart
 ## Mermaid サンプル13 - XYチャート
 
 ```mermaid
-xychart-beta
+xychart
     title "Monthly Sales Trend"
     x-axis [Jan, Feb, Mar, Apr, May, Jun]
     y-axis "Sales (10K JPY)" 0 --> 500
@@ -246,7 +246,7 @@ xychart-beta
 ## Mermaid サンプル14 - サンキー図
 
 ```mermaid
-sankey-beta
+sankey
 
 Visitors,Home,1000
 Home,Product List,600
@@ -262,26 +262,19 @@ Cart,Bounce,50
 ## Mermaid サンプル15 - ブロック図
 
 ```mermaid
-block-beta
-columns 3
-    Frontend["Frontend\nNext.js"]
-    space
-    Backend["Backend\nNode.js"]
-
-    space space space
-
-    CDN["CDN\nCloudflare"]
-    LB["Load Balancer"]
-    Cache["Cache\nRedis"]
-
-    space space space
-
-    DB[("Database\nPostgreSQL")]:3
-
-    Frontend --> CDN
-    Backend --> LB
-    LB --> Cache
-    Cache --> DB
+block
+columns 1
+  db(("DB"))
+  blockArrowId6<["&nbsp;&nbsp;&nbsp;"]>(down)
+  block:ID
+    A
+    B["A wide one in the middle"]
+    C
+  end
+  space
+  D
+  ID --> D
+  C --> D
 ```
 
 ## Mermaid サンプル16 - 要件図

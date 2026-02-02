@@ -93,3 +93,18 @@ Claude Code の機能やテクニックを整理した記事です。
 ::link-card[https://zenn.dev/flinters_blog/articles/b9eb3f9d308592]
 
 ::link-card[https://azukiazusa.dev/blog/spec-driven-development-with-spec-kit/]
+
+## 閉じてしまったセッションを再開する
+
+以下のコマンドで直前のセッションを再開できる。`Ctrl + C` で閉じてしまった場合などに便利です。
+
+```sh:Terminal
+claude -c
+claude --continue
+```
+
+次のコマンドであれば、過去のセッションから選んで再開することもできます。
+
+```sh:Terminal
+claude --resume
+```

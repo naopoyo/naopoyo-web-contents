@@ -3,3 +3,4 @@
 /.serena
 /.hackersheet/cli.config.json
 /.hackersheet/templates
+.DS_STORE

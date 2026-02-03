@@ -1,0 +1,22 @@
+{
+  "link-card": {
+    "prefix": "::link-card",
+    "body": "::link-card[$TM_SELECTED_TEXT$1]",
+    "description": "Markdown extension for link card embeds on Hacker Sheet."
+  },
+  "youtube": {
+    "prefix": "::youtube",
+    "body": "::youtube[$TM_SELECTED_TEXT$1]",
+    "description": "Markdown extension for YouTube video embeds on Hacker Sheet."
+  },
+  "x-post": {
+    "prefix": "::x-post",
+    "body": "::x-post[$TM_SELECTED_TEXT$1]",
+    "description": "Markdown extension for X post embeds on Hacker Sheet."
+  },
+  "kifu-to": {
+    "prefix": ":kifu-to",
+    "body": ":kifu-to[$TM_SELECTED_TEXT$1]",
+    "description": "Markdown extension for linking shogi game moves on Hacker Sheet."
+  }
+}

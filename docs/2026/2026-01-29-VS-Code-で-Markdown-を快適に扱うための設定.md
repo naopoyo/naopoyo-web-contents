@@ -4,7 +4,7 @@ emoji: ⚙️
 title: VS Code で Markdown を快適に扱うための設定
 slug: vscode-markdown-comfortable-settings
 published_at: 2026-01-29 10:23:00
-modified_at: 2026-01-29 10:23:00
+modified_at: 2026-02-05 19:38:24
 tags:
   - VS Code
   - Markdown
@@ -13,6 +13,8 @@ preview: null
 ---
 
 ## プラグイン
+
+以下のプラグインをインストールすると便利。
 
 ### Markdown All in One
 

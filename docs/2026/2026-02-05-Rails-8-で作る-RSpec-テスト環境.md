@@ -76,7 +76,7 @@ bundle exec rails generate rspec:install
 
 テスト実行後、`coverage/index.html` をブラウザで開くとカバレッジレポートを確認できます。どのコードがテストされていないかが一目でわかるので、テストの抜け漏れを防げます。
 
-```ruby
+```ruby:spec_helper.rb
 # frozen_string_literal: true
 
 require 'simplecov'
@@ -133,7 +133,7 @@ end
 - トランザクションによるテストデータの自動クリーンアップ
 - shoulda-matchers の統合設定
 
-```ruby
+```ruby:rails_helper.rb
 # frozen_string_literal: true
 
 require 'spec_helper'
@@ -197,7 +197,7 @@ test-prof は Evil Martians が開発したテスト高速化ツールです。�
 
 `spec/support/test_prof.rb` を作成します。
 
-```ruby
+```ruby:spec/support/test_prof.rb
 # frozen_string_literal: true
 
 require 'test_prof/recipes/rspec/let_it_be'

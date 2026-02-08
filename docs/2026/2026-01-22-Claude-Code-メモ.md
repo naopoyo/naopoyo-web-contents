@@ -114,7 +114,8 @@ claude --resume
 - 使っているフレームワークのベストプラクティスをスキルにすると良い
   - React や Next.js などは skills.sh にあるものを使う
   - Rails は `skill-crator` を使って作った
-- 「調査にはサブエージェントを使って」というとコンテクストの消費が緩やかになる気がする
+- 「調査にはサブエージェントを使って」というとコンテキストウィンドウの消費が緩やかになる気がする
+  - 明示的に指示しなくても、いい感じに使ってくれることもある
 - CLAUDE.md の修正も Claude Code にやらせるのが良い
   - 「Claude Code が既に知っている一般的な内容や冗長な記述は削除して」と言うとコンパクトにしてくれる
   - スキルの時もこれを言った方が良い
@@ -126,3 +127,22 @@ claude --resume
 - スキルに `user-invocable: false` が設定されていると `/hoge-skill` のような使い方ができなくなる
 - コミットスキルのように他のプロジェクトでも使いまわしたいものは、CLAUDE.md を参照するような記述をしておくと良い
   - 例）プロジェクトに `.claude/CLAUDE.md` が存在する場合、そこに記載された PR 作成ルールを確認し、適用してください。
+
+## コンテキストウィンドウ の確認
+
+`/context` コマンドで以下のように表示されます。ゲームのインベントリみたい。
+
+```sh
+/context
+  ⎿  Context Usage
+     ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁   claude-opus-4-6 · 21k/200k tokens (10%)
+     ⛀ ⛀ ⛀ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   Estimated usage by category
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   ⛁ System prompt: 3.5k tokens (1.8%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   ⛁ System tools: 16.1k tokens (8.1%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   ⛁ Memory files: 298 tokens (0.1%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   ⛁ Skills: 675 tokens (0.3%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   ⛁ Messages: 8 tokens (0.0%)
+     ⛶ ⛶ ⛶ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝   ⛶ Free space: 146k (73.2%)
+     ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝   ⛝ Autocompact buffer: 33k tokens (16.5%)
+```

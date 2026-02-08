@@ -127,6 +127,7 @@ claude --resume
 - スキルに `user-invocable: false` が設定されていると `/hoge-skill` のような使い方ができなくなる
 - コミットスキルのように他のプロジェクトでも使いまわしたいものは、CLAUDE.md を参照するような記述をしておくと良い
   - 例）プロジェクトに `.claude/CLAUDE.md` が存在する場合、そこに記載された PR 作成ルールを確認し、適用してください。
+- `~/.claude/projects/-var-workspace/memory/MEMORY.md` にメモリーが保存されている
 
 ## コンテキストウィンドウ の確認
 

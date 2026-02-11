@@ -139,7 +139,7 @@ end
 
 開発サーバー起動後、`/mini-profiler-resources/snapshots` にアクセスするとスナップショット一覧が表示される。個別のスナップショットをクリックすると、GraphQL の step や SQL クエリの詳細を確認できる。
 
-## おまけ: Next.js (URQL) からプロファイル結果にアクセスする
+## おまけ: Next.js (urql) からプロファイル結果にアクセスする
 
 API-only 構成ではフロントエンドとサーバーが別プロセスになるため、Next.js のサーバーサイドログからプロファイル結果に直接アクセスできると便利になる。
 
@@ -179,7 +179,7 @@ const fetchWithProfiler: typeof fetch = async (input, init) => {
   if (id) {
     const operation = group?.match(/\[(.+)\]/)?.[1] ?? 'unknown';
     const params = new URLSearchParams({ id, ...(group && { group }) });
-    console.log(`[MiniProfiler] ${operation} → ${PROFILER_BASE_URL}?${params}`);
+    console.log(`[MiniProfiler] ${operation} ${PROFILER_BASE_URL}?${params}`);
   }
   return response;
 };

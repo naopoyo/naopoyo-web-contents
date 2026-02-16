@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 emoji: 🎼
 title: Rails + React 構成についてのメモ
 slug: rails-react-architecture-notes

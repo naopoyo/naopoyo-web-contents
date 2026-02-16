@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 emoji: 🎣
 title: GitHub App Webhook で push を処理するとき、知っておきたい制約と対処法
 slug: github-app-webhook-push-processing-constraints-and-solutions

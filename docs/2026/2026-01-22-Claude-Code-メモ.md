@@ -4,7 +4,7 @@ emoji: 🚈
 title: Claude Code メモ
 slug: claude-code-notes
 published_at: 2026-01-22 19:00:33
-modified_at: 2026-01-22 19:00:33
+modified_at: 2026-02-18 09:49:25
 tags:
   - Claude Code
 preview: null
@@ -133,6 +133,7 @@ claude --resume
   - 例）プロジェクトに `.claude/CLAUDE.md` が存在する場合、そこに記載された PR 作成ルールを確認し、適用してください。
 - `~/.claude/projects/-var-workspace/memory/MEMORY.md` にメモリーが保存されている
 - tree、cloc、fd-find を入れておくと、Explore の効率が上がるかもしれない
+- `control` + `R` で過去のプロンプトを検索。入力後に `control` + `R` で古いもの、新しいものに戻る場合は `control` + `S`
 
 ## コンテキストウィンドウ の確認
 

@@ -134,6 +134,8 @@ claude --resume
 - `~/.claude/projects/-var-workspace/memory/MEMORY.md` にメモリーが保存されている
 - tree、cloc、fd-find を入れておくと、Explore の効率が上がるかもしれない
 - `control` + `R` で過去のプロンプトを検索。入力後に `control` + `R` で古いもの、新しいものに戻る場合は `control` + `S`
+- `.claude/settings.json` に `"model": "claude-sonnet-4-6"` でモデル指定
+- レビューとテストケースの追加・編集をサブエージェントに委譲するようにしている
 
 ## コンテキストウィンドウ の確認
 
